@@ -2728,6 +2728,11 @@ internal-slot@^1.1.0:
     hasown "^2.0.2"
     side-channel "^1.1.0"
 
+inversify-react@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/inversify-react/-/inversify-react-1.2.0.tgz#108d96df95e587f3761de313e7aef58e3b86618b"
+  integrity sha512-4p0WRWaMpQAU7PBzz+6/OMFW9JPEtN6MzamQkEZ7CJUZEziBnG5afBrtP+QyS1gj/Su3igORkCeru0vUZkUGqw==
+
 inversify@^8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/inversify/-/inversify-8.1.0.tgz#f29a500796bfd2fd67562a9ecf6e454fad6bd126"
