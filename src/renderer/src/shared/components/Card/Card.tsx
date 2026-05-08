@@ -1,11 +1,14 @@
-import { FC, ReactNode } from 'react'
+import { DetailedHTMLProps, FC, HTMLAttributes, ReactNode } from 'react'
 import clsx from 'clsx'
 
 import styles from './Card.module.css'
 
 export type CardVariant = 'small' | 'medium'
 
-export interface CardProps {
+export interface CardProps extends DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+> {
   children?: ReactNode
   className?: string
   variant?: CardVariant

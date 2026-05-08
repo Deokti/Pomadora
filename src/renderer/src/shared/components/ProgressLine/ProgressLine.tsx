@@ -1,14 +1,16 @@
 import clsx from 'clsx'
-import type { CSSProperties, HTMLAttributes } from 'react'
+import { ProgressBar, type ProgressBarProps } from '@heroui/react'
 
 import styles from './ProgressLine.module.css'
 
 export type ProgressLineVariant = 'primary' | 'secondary'
+export type ProgressLineSize = 'small' | 'medium'
 
-export interface ProgressLineProps extends HTMLAttributes<HTMLDivElement> {
+export interface ProgressLineProps extends Omit<ProgressBarProps, 'value' | 'size'> {
   progress: number
   selected?: boolean
   variant?: ProgressLineVariant
+  size?: ProgressLineSize
 }
 
 export const ProgressLine = ({
@@ -16,32 +18,17 @@ export const ProgressLine = ({
   className,
   selected,
   variant = 'primary',
-  style,
+  size = 'small',
   ...props
 }: ProgressLineProps) => {
   const progressValue = Math.min(Math.max(progress, 0), 100)
-  const classNames = clsx(
-    styles.container,
-    styles[variant],
-    selected && styles.selected,
-    className
-  )
-  const progressStyle = {
-    ...style,
-    '--progress-line-progress': `${progressValue}%`
-  } as CSSProperties
+  const classNames = clsx(styles.container, styles[variant], selected && styles.selected, className)
 
   return (
-    <div
-      className={classNames}
-      role="progressbar"
-      aria-valuemin={0}
-      aria-valuemax={100}
-      aria-valuenow={progressValue}
-      style={progressStyle}
-      {...props}
-    >
-      <div className={styles.fill} />
-    </div>
+    <ProgressBar value={progressValue} className={classNames} {...props}>
+      <ProgressBar.Track className={clsx(styles[size], styles.track)}>
+        <ProgressBar.Fill />
+      </ProgressBar.Track>
+    </ProgressBar>
   )
 }
