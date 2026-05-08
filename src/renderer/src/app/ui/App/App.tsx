@@ -1,15 +1,18 @@
 import { observer } from 'mobx-react-lite'
 
 import './App.css'
-import { Button } from 'shared/components/Button'
+import { Button, Card } from 'shared/components'
 
 export const App = observer(() => {
   return (
     <div style={{ padding: 20, display: 'flex', gap: 15 }} className="app">
-      <Button>Кнопка</Button>
-      <Button color="danger" variant="contained">
-        Кнопка
-      </Button>
+      <Card>
+        <Button>Продолжить</Button>
+        <Button variant="secondary">Пропустить</Button>
+        <Button variant="secondary" size="small">
+          Подробнее
+        </Button>
+      </Card>
     </div>
   )
 })

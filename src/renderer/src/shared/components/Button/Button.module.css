@@ -1,53 +1,26 @@
 .button {
   border-radius: 14px;
   border: 2px solid transparent;
+  font-weight: bold;
 }
 
 .small {
-  padding: 16px 30px;
+  padding: 22px 30px;
   font-size: 14px;
 }
 
 .medium {
-  padding: 30px 70px;
+  padding: 28px 68px;
   font-size: 17px;
 }
 
 .primary {
-  background-color: var(--info-primary-color);
-  color: var(--info-promary-color-text);
+  background-color: var(--color-button-primary-bg);
+  color: var(--color-button-primary-text);
 }
 
 .secondary {
-  background-color: var(--info-secondary-background);
-  border-color: #283050;
-}
-
-.warning {
-  background-color: var(--mongoose-color);
-}
-
-.danger {
-  background-color: var(--danger-color);
-}
-
-.outlined {
-  background-color: transparent;
-
-  &.primary {
-    border-color: var(--info-primary-color);
-  }
-
-  &.secondary {
-    border-color: var(--info-secondary-background);
-    color: var(--info-promary-color-text);
-  }
-
-  &.warning {
-    border-color: var(--mongoose-color);
-  }
-
-  &.danger {
-    border-color: var(--danger-color);
-  }
+  background-color: var(--color-button-secondary-bg);
+  border: 2px solid var(--color-button-secondary-border);
+  color: var(--color-button-secondary-text);
 }

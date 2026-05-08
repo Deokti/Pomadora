@@ -1,18 +1,42 @@
 :root {
-  /* Базовые стили для всего проекта */
-  --mongoose-color: #B19B7C;
-  --danger-color: #E84A4A;
+  /* Primitive */
+  --night-950: #0f1320;
+  --night-900: #161b2b;
+  --night-850: #191e2d;
 
-  /* Цвета, относящиеся к определенной теме/экрану  */
-  --laconic-main-bg: #070E16;
-  --laconic-primary-color: #F3F5F8;
-  --laconic-indicator-background: #070E16;
-  --laconic-secondary-color: #5B646F;
+  --mint-500: #1ed881;
+  --coral-500: #e84a4a;
 
-  /* Цвета, относящиеся к определенной теме/экрану  */
-  --info-primary-color: #1ED881;
-  --info-promary-color-text: #06210F;
-  --info--primary-color: #FFFFFF;
-  --info-secondary-color: #8892A8;
-  --info-secondary-background: #1A2034;
+  --slate-600: #5a6378;
+  --slate-500: #8892a8;
+  --slate-300: #c8cee0;
+
+  --navy-750: #283050;
+  --navy-700: #2a324a;
+
+  /* Semantic */
+  --color-bg-app: var(--night-950);
+  --color-bg-card: var(--night-900);
+  --color-bg-control: var(--night-850);
+
+  --color-text-primary: #FFF;
+  --color-text-secondary: var(--slate-300);
+  --color-text-muted: var(--slate-500);
+  --color-text-subtle: var(--slate-600);
+
+  --color-border-primary: var(--navy-700);
+  --color-border-subtle: var(--navy-750);
+
+  --color-accent-primary: var(--mint-500);
+  --color-accent-danger: var(--coral-500);
+
+  --color-progress-active: var(--mint-500);
+  --color-progress-track: var(--navy-700);
+
+  --color-button-primary-bg: var(--mint-500);
+  --color-button-primary-text: var(--night-950);
+
+  --color-button-secondary-bg: var(--night-850);
+  --color-button-secondary-border: var(--navy-750);
+  --color-button-secondary-text: #FFF;
 }

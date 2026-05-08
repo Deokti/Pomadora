@@ -1,0 +1,38 @@
+.container {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--progress-line-radius);
+  background-color: var(--progress-line-background);
+  box-shadow: var(--progress-line-border, none);
+}
+
+.primary {
+  --progress-line-background: var(--color-blue-23);
+  --progress-line-fill: var(--info-primary-color);
+  --progress-line-radius: 999px;
+
+  height: 18px;
+}
+
+.secondary {
+  --progress-line-background: transparent;
+  --progress-line-border: inset 0 0 0 2px var(--color-azure-13);
+  --progress-line-fill: var(--mongoose-color);
+  --progress-line-radius: 12px;
+
+  height: 34px;
+}
+
+.secondary.selected {
+  --progress-line-background: var(--color-azure-13);
+  --progress-line-border: none;
+}
+
+.fill {
+  height: 100%;
+  border-radius: inherit;
+  background-color: var(--progress-line-fill);
+  transition: width 200ms ease;
+}
