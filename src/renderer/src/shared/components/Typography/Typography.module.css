@@ -1,0 +1,113 @@
+.container {
+  margin: 0;
+}
+
+/* Variants */
+
+.timer {
+  font-size: 200px;
+  letter-spacing: -8px;
+}
+
+.timerCompact {
+  font-size: 168px;
+  letter-spacing: -7px;
+}
+
+.h1 {
+  font-size: 52px;
+  line-height: 60px;
+}
+
+.h2 {
+  font-size: 28px;
+  line-height: 36px;
+}
+
+.title {
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.body {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.label {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.labelWide {
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.button {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+/* Weights */
+
+.regular {
+  font-weight: 400;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+/* Colors */
+
+.primary {
+  color: var(--color-text-primary);
+}
+
+.secondary {
+  color: var(--color-text-secondary);
+}
+
+.muted {
+  color: var(--color-text-muted);
+}
+
+.subtle {
+  color: var(--color-text-subtle);
+}
+
+.accent {
+  color: var(--color-accent-primary);
+}
+
+.danger {
+  color: var(--color-accent-danger);
+}
+
+.inherit {
+  color: inherit;
+}
+
+/* Align */
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
