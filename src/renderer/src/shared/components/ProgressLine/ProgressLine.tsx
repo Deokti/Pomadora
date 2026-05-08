@@ -2,6 +2,7 @@ import clsx from 'clsx'
 import { ProgressBar, type ProgressBarProps } from '@heroui/react'
 
 import styles from './ProgressLine.module.css'
+import { FC } from 'react'
 
 export type ProgressLineVariant = 'primary' | 'secondary'
 export type ProgressLineSize = 'small' | 'medium'
@@ -13,7 +14,7 @@ export interface ProgressLineProps extends Omit<ProgressBarProps, 'value' | 'siz
   size?: ProgressLineSize
 }
 
-export const ProgressLine = ({
+export const ProgressLine: FC<ProgressLineProps> = ({
   progress,
   className,
   selected,
