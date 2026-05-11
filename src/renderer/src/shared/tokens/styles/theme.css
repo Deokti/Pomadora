@@ -29,6 +29,10 @@
   --color-border-primary: var(--navy-700);
   --color-border-subtle: var(--navy-750);
 
+  --color-popover-bg: var(--night-850);
+  --color-popover-border: color-mix(in srgb, var(--navy-700) 78%, #FFF 8%);
+  --shadow-popover: 0 22px 48px rgb(0 0 0 / 36%);
+
   --color-accent-primary: var(--mint-500);
   --color-accent-danger: var(--coral-500);
 

@@ -1,0 +1,14 @@
+.root {
+  -webkit-app-region: no-drag;
+}
+
+.paper {
+  min-width: 280px;
+  border: 1px solid var(--color-popover-border);
+  border-radius: 18px;
+  background-color: var(--color-popover-bg);
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-popover);
+  overflow: hidden;
+  -webkit-app-region: no-drag;
+}

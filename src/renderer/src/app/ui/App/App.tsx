@@ -1,9 +1,11 @@
 import { observer } from 'mobx-react-lite'
+import { type MouseEvent, useState } from 'react'
 
 import './App.css'
 import {
   Button,
   Card,
+  Popover,
   ProgressLine,
   Typography,
   Icon,
@@ -13,6 +15,18 @@ import {
 } from 'shared/components'
 
 export const App = observer(() => {
+  const [settingsAnchor, setSettingsAnchor] = useState<HTMLButtonElement | null>(null)
+
+  const isSettingsOpen = Boolean(settingsAnchor)
+
+  const handleOpenSettings = (event: MouseEvent<HTMLButtonElement>) => {
+    setSettingsAnchor(event.currentTarget)
+  }
+
+  const handleCloseSettings = () => {
+    setSettingsAnchor(null)
+  }
+
   return (
     <div className="app">
       <Card style={{ padding: 20, display: 'flex', gap: 15, flexWrap: 'wrap' }}>
@@ -51,6 +65,31 @@ export const App = observer(() => {
       >
         <Slider variant="primary" defaultValue={25} />
         <Slider variant="secondary" defaultValue={35} />
+      </Card>
+
+      <Card className="popover-demo-card">
+        <ButtonIcon
+          aria-describedby={isSettingsOpen ? 'settings-popover' : undefined}
+          aria-label="Открыть настройки"
+          onClick={handleOpenSettings}
+        >
+          <Icon name="settings" color="#fff" size={30} />
+        </ButtonIcon>
+
+        <Popover
+          id="settings-popover"
+          open={isSettingsOpen}
+          anchorEl={settingsAnchor}
+          onClose={handleCloseSettings}
+        >
+          <div className="popover-demo-content">
+            <Typography variant="title" color="muted">
+              НАСТРОЙКИ
+            </Typography>
+
+            <Typography color="secondary">Здесь позже будет SettingsPanel.</Typography>
+          </div>
+        </Popover>
       </Card>
     </div>
   )

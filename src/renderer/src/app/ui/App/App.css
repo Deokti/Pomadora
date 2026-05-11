@@ -40,3 +40,19 @@ select,
 [role="button"] {
   -webkit-app-region: no-drag;
 }
+
+.popover-demo-card {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.popover-demo-content {
+  display: flex;
+  width: 320px;
+  flex-direction: column;
+  gap: 18px;
+  padding: 28px 22px;
+}

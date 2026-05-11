@@ -1,6 +1,7 @@
 export * from './Button'
 export * from './Card'
 export * from './ProgressLine'
+export * from './Popover'
 export * from './Typography'
 export * from './Icon'
 export * from './ButtonIcon'
