@@ -42,3 +42,11 @@
       0 0 7px 0 var(--color-slider-secondary-thumb-glow);
   }
 }
+
+.secondary .track:not([data-fill-start]):not([data-fill-end]) .thumb {
+  left: -1% !important;
+}
+
+.secondary .track[data-fill-end="true"] .thumb {
+  left: 101% !important;
+}
