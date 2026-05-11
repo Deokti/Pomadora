@@ -11,7 +11,8 @@ import {
   Icon,
   ButtonIcon,
   Indicator,
-  Slider
+  Slider,
+  Triangle
 } from 'shared/components'
 
 export const App = observer(() => {
@@ -90,6 +91,15 @@ export const App = observer(() => {
             <Typography color="secondary">Здесь позже будет SettingsPanel.</Typography>
           </div>
         </Popover>
+      </Card>
+
+      <Card className="popover-demo-card">
+        <Triangle color="primary" />
+        <Triangle color="secondary" />
+        <Triangle color="muted" />
+        <Triangle color="accent" />
+        <Triangle color="danger" />
+        <Triangle color="subtle" />
       </Card>
     </div>
   )

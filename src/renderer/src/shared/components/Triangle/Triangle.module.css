@@ -1,0 +1,38 @@
+.container {
+  --triangle-color: var(--color-accent-primary);
+
+  display: block;
+  inline-size: 8px;
+  block-size: 5px;
+  flex: 0 0 auto;
+  background-color: var(--triangle-color);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.primary {
+  --triangle-color: var(--color-text-primary);
+}
+
+.secondary {
+  --triangle-color: var(--color-text-secondary);
+}
+
+.muted {
+  --triangle-color: var(--color-text-muted);
+}
+
+.subtle {
+  --triangle-color: var(--color-text-subtle);
+}
+
+.accent {
+  --triangle-color: var(--color-accent-primary);
+}
+
+.danger {
+  --triangle-color: var(--color-accent-danger);
+}
+
+.inherit {
+  --triangle-color: currentColor;
+}
