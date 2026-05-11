@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite'
 
 import './App.css'
-import { Button, Card, ProgressLine, Typography } from 'shared/components'
+import { Button, Card, ProgressLine, Typography, Icon } from 'shared/components'
 
 export const App = observer(() => {
   return (
@@ -19,6 +19,14 @@ export const App = observer(() => {
         <Typography variant="timer" weight="bold">
           25:00
         </Typography>
+      </Card>
+
+      <Card style={{ padding: 20, marginTop: 20, display: 'flex', gap: 15 }}>
+        <Icon name="start" color="#fff" />
+        <Icon name="pause" color="#fff" />
+        <Icon name="reset" color="#fff" />
+        <Icon name="skip" color="#fff" size={20} />
+        <Icon name="settings" color="#fff" size={30} />
       </Card>
     </div>
   )
