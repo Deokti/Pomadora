@@ -1,0 +1,30 @@
+.container {
+  border: 1px solid var(--color-button-secondary-border);
+  width: auto;
+  height: auto;
+  min-width: 0;
+  min-height: 0;
+}
+
+.rounded {
+  border-radius: 10px;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.small {
+  padding: 9px;
+}
+
+.medium {
+  padding: 14px;
+}
+
+.container svg {
+  width: auto;
+  height: auto;
+  margin: 0;
+  flex-shrink: 0;
+}

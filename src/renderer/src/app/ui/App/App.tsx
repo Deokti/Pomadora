@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite'
 
 import './App.css'
-import { Button, Card, ProgressLine, Typography, Icon } from 'shared/components'
+import { Button, Card, ProgressLine, Typography, Icon, ButtonIcon } from 'shared/components'
 
 export const App = observer(() => {
   return (
@@ -26,7 +26,10 @@ export const App = observer(() => {
         <Icon name="pause" color="#fff" />
         <Icon name="reset" color="#fff" />
         <Icon name="skip" color="#fff" size={20} />
-        <Icon name="settings" color="#fff" size={30} />
+
+        <ButtonIcon>
+          <Icon name="settings" color="#fff" size={30} />
+        </ButtonIcon>
       </Card>
     </div>
   )
