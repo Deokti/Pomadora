@@ -7,6 +7,11 @@
   font-weight: bold;
   line-height: 1;
   text-transform: none;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    filter 160ms ease;
 }
 
 .small {
@@ -25,7 +30,12 @@
 }
 
 .primary:hover {
-  background-color: var(--color-button-primary-bg);
+  filter: brightness(0.92);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-button-primary-bg) 18%, transparent);
+}
+
+.primary:active {
+  filter: brightness(0.86);
 }
 
 .secondary {
@@ -35,5 +45,15 @@
 }
 
 .secondary:hover {
-  background-color: var(--color-button-secondary-bg);
+  background-color: color-mix(in srgb, var(--color-button-secondary-bg) 82%, #fff);
+  border-color: color-mix(in srgb, var(--color-button-secondary-border) 74%, #fff);
+  box-shadow: 0 0 0 4px color-mix(in srgb, #fff 7%, transparent);
+}
+
+.secondary:active {
+  background-color: color-mix(in srgb, var(--color-button-secondary-bg) 90%, #000);
+}
+
+.button:focus-visible {
+  box-shadow: 0 0 0 4px color-mix(in srgb, #fff 16%, transparent);
 }

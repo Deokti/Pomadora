@@ -6,10 +6,27 @@
   height: auto;
   min-width: 0;
   min-height: 0;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    color 160ms ease,
+    filter 160ms ease;
 }
 
 .container:hover {
-  background-color: transparent;
+  color: var(--color-text-primary);
+  border-color: color-mix(in srgb, var(--color-button-secondary-border) 74%, #fff);
+  background-color: color-mix(in srgb, var(--color-button-secondary-bg) 76%, #fff);
+  box-shadow: 0 0 0 4px color-mix(in srgb, #fff 7%, transparent);
+}
+
+.container:active {
+  filter: brightness(0.88);
+}
+
+.container:focus-visible {
+  box-shadow: 0 0 0 4px color-mix(in srgb, #fff 16%, transparent);
 }
 
 .rounded {

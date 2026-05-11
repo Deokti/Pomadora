@@ -1,6 +1,9 @@
 .container {
   margin: 0;
   font-family: inherit;
+  cursor: text;
+  user-select: text;
+  -webkit-app-region: no-drag;
 }
 
 /* Variants */
