@@ -1,7 +1,10 @@
 .button {
+  min-width: 0;
   border-radius: 14px;
   border: 2px solid transparent;
   font-weight: bold;
+  line-height: 1;
+  text-transform: none;
 }
 
 .small {
@@ -19,8 +22,16 @@
   color: var(--color-button-primary-text);
 }
 
+.primary:hover {
+  background-color: var(--color-button-primary-bg);
+}
+
 .secondary {
   background-color: var(--color-button-secondary-bg);
   border: 2px solid var(--color-button-secondary-border);
   color: var(--color-button-secondary-text);
+}
+
+.secondary:hover {
+  background-color: var(--color-button-secondary-bg);
 }

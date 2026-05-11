@@ -1,9 +1,15 @@
 .container {
+  color: var(--color-button-secondary-text);
   border: 1px solid var(--color-button-secondary-border);
+  background-color: transparent;
   width: auto;
   height: auto;
   min-width: 0;
   min-height: 0;
+}
+
+.container:hover {
+  background-color: transparent;
 }
 
 .rounded {

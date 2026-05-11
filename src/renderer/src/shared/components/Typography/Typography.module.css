@@ -1,5 +1,6 @@
 .container {
   margin: 0;
+  font-family: inherit;
 }
 
 /* Variants */

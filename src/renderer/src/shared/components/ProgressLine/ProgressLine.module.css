@@ -1,25 +1,30 @@
+.track {
+  border-radius: 999px;
+  background-color: var(--progress-track-bg);
+}
+
+.fill {
+  border-radius: inherit;
+  background-color: var(--color-progress-active);
+}
+
 .primary {
-  --progress-bar-fill: var(--color-progress-active);
-  --default: var(--color-progress-track)
+  --progress-track-bg: var(--color-progress-track);
 }
 
 .secondary {
-  --progress-bar-fill: var(--color-progress-active);
-  --default: transparent;
+  --progress-track-bg: transparent;
+  border: 1px solid var(--color-progress-track);
+}
 
-  .track:not(.selected) {
-    border: 1px solid var(--color-progress-track);
-  }
-
-  &.selected {
-    --default: var(--color-progress-track)
-  }
+.secondary.selected {
+  --progress-track-bg: var(--color-progress-track);
+  border-color: transparent;
 }
 
 .small {
   height: 6px;
 }
-
 
 .medium {
   height: 8px;

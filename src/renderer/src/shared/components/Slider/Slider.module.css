@@ -1,52 +1,62 @@
 .container {
-  display: flex;
   width: 100%;
-  flex-direction: column;
-  gap: 12px;
+  padding: 0;
 }
 
-.primary {
-  .track {
-    --accent: var(--color-slider-primary);
-    height: 6px;
-  }
+.rail,
+.track {
+  border: none;
+  border-radius: 999px;
+}
 
-  .fill {
-    background-color: var(--color-slider-primary);
-  }
+.primary .rail {
+  height: 6px;
+  background-color: var(--color-progress-track);
+  opacity: 1;
+}
 
-  .thumb {
-    opacity: 0;
-    cursor: default;
-  }
+.primary .track {
+  height: 6px;
+  background-color: var(--color-slider-primary);
+}
+
+.primary .thumb {
+  display: none;
 }
 
 .secondary {
-  .track {
-    --accent: var(--color-slider-secondary-track);
-    height: 4px;
-  }
-
-  .fill {
-    background-color: var(--color-slider-secondary-fill);
-  }
-
-  .thumb {
-    width: 12px;
-    height: 12px;
-    display: block;
-    border-radius: 50%;
-    background-color: var(--color-slider-secondary-thumb);
-    box-shadow:
-      0 0 0 3px var(--color-slider-secondary-thumb-ring),
-      0 0 7px 0 var(--color-slider-secondary-thumb-glow);
-  }
+  --thumb-size: 12px;
 }
 
-.secondary .track:not([data-fill-start]):not([data-fill-end]) .thumb {
-  left: -1% !important;
+.secondary .rail {
+  height: 4px;
+  background-color: var(--color-slider-secondary-track);
+  opacity: 1;
 }
 
-.secondary .track[data-fill-end="true"] .thumb {
-  left: 101% !important;
+.secondary .track {
+  height: 4px;
+  background-color: var(--color-slider-secondary-fill);
+}
+
+.secondary .thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  background-color: var(--color-slider-secondary-thumb);
+  box-shadow:
+    0 0 0 3px var(--color-slider-secondary-thumb-ring),
+    0 0 7px 0 var(--color-slider-secondary-thumb-glow);
+}
+
+.secondary .thumb:hover,
+.secondary .thumb:global(.Mui-focusVisible),
+.secondary .thumb:global(.Mui-active) {
+  box-shadow:
+    0 0 0 3px var(--color-slider-secondary-thumb-ring),
+    0 0 7px 0 var(--color-slider-secondary-thumb-glow);
+}
+
+.secondary .thumb::before,
+.secondary .thumb::after {
+  display: none;
 }

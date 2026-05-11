@@ -1,4 +1,4 @@
-import { Button as HerouiButton, ButtonProps as HerouiButtonProps } from '@heroui/react'
+import MuiIconButton, { type IconButtonProps as MuiIconButtonProps } from '@mui/material/IconButton'
 import clsx from 'clsx'
 
 import styles from './ButtonIcon.module.css'
@@ -7,8 +7,8 @@ type ButtonIconVariant = 'rounded' | 'circle'
 type ButtonIconSize = 'small' | 'medium'
 
 export interface ButtonIconProps extends Omit<
-  HerouiButtonProps,
-  'variant' | 'isIconOnly' | 'size' | 'fullWidth'
+  MuiIconButtonProps,
+  'color' | 'size'
 > {
   variant?: ButtonIconVariant
   size?: ButtonIconSize
@@ -22,13 +22,12 @@ export const ButtonIcon = ({
   ...props
 }: ButtonIconProps) => {
   return (
-    <HerouiButton
-      isIconOnly
-      variant="outline"
+    <MuiIconButton
       className={clsx(styles.container, styles[variant], styles[size], className)}
+      disableRipple
       {...props}
     >
       {children}
-    </HerouiButton>
+    </MuiIconButton>
   )
 }
