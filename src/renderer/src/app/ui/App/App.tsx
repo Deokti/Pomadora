@@ -15,7 +15,7 @@ import {
 export const App = observer(() => {
   return (
     <div className="app">
-      <Card style={{ padding: 20, display: 'flex', gap: 15 }}>
+      <Card style={{ padding: 20, display: 'flex', gap: 15, flexWrap: 'wrap' }}>
         <Indicator color="primary" />
         <Indicator color="secondary" />
 
