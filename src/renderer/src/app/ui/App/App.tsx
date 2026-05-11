@@ -8,7 +8,8 @@ import {
   Typography,
   Icon,
   ButtonIcon,
-  Indicator
+  Indicator,
+  Slider
 } from 'shared/components'
 
 export const App = observer(() => {
@@ -41,6 +42,12 @@ export const App = observer(() => {
         <ButtonIcon>
           <Icon name="settings" color="#fff" size={30} />
         </ButtonIcon>
+      </Card>
+      <Card
+        style={{ padding: 20, marginTop: 20, display: 'flex', gap: 15, flexDirection: 'column' }}
+      >
+        <Slider variant="primary" />
+        <Slider variant="secondary" />
       </Card>
     </div>
   )
