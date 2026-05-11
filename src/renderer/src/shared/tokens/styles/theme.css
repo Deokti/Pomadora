@@ -17,6 +17,7 @@
 
   /* Semantic */
   --color-bg-app: var(--night-950);
+  --main-border-radius: 32px;
   --color-bg-card: var(--night-900);
   --color-bg-control: var(--night-850);
 

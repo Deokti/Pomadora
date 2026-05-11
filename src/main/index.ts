@@ -9,6 +9,10 @@ function createWindow(): void {
     width: 900,
     height: 670,
     show: false,
+    frame: false,
+    transparent: true,
+    backgroundColor: '#00000000',
+    hasShadow: true,
     autoHideMenuBar: true,
     icon,
     webPreferences: {
