@@ -14,13 +14,14 @@ export interface SliderProps extends Omit<HerouiSliderProps, 'children' | 'class
 export const Slider: FC<SliderProps> = ({
   className,
   variant = 'primary',
+  step = 0.1,
   ...props
 }: SliderProps) => {
   return (
     <HerouiSlider
       className={clsx(styles.container, styles[variant], className)}
+      step={step}
       {...props}
-      defaultValue={10}
     >
       <HerouiSlider.Track className={styles.track}>
         <HerouiSlider.Fill className={styles.fill} />

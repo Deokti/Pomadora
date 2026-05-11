@@ -46,8 +46,8 @@ export const App = observer(() => {
       <Card
         style={{ padding: 20, marginTop: 20, display: 'flex', gap: 15, flexDirection: 'column' }}
       >
-        <Slider variant="primary" />
-        <Slider variant="secondary" />
+        <Slider variant="primary" defaultValue={25} />
+        <Slider variant="secondary" defaultValue={35} />
       </Card>
     </div>
   )
