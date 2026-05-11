@@ -19,7 +19,11 @@ export const Card: FC<CardProps> = ({
   ...props
 }: CardProps) => {
   return (
-    <MuiCard className={clsx(styles.container, styles[variant], className)} elevation={0} {...props}>
+    <MuiCard
+      className={clsx(styles.container, styles[variant], className)}
+      elevation={0}
+      {...props}
+    >
       {children}
     </MuiCard>
   )
