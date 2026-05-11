@@ -5,6 +5,7 @@
   --night-850: #191e2d;
 
   --mint-500: #1ed881;
+  --green-37: #7AA896;
   --coral-500: #e84a4a;
 
   --slate-600: #5a6378;
@@ -39,4 +40,7 @@
   --color-button-secondary-bg: var(--night-850);
   --color-button-secondary-border: var(--navy-750);
   --color-button-secondary-text: #FFF;
+
+  --color-indicator-primary: var(--mint-500);
+  --color-indicator-secondary: var(--green-37);
 }

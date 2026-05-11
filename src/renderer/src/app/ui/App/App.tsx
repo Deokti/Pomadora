@@ -1,12 +1,23 @@
 import { observer } from 'mobx-react-lite'
 
 import './App.css'
-import { Button, Card, ProgressLine, Typography, Icon, ButtonIcon } from 'shared/components'
+import {
+  Button,
+  Card,
+  ProgressLine,
+  Typography,
+  Icon,
+  ButtonIcon,
+  Indicator
+} from 'shared/components'
 
 export const App = observer(() => {
   return (
     <div className="app">
       <Card style={{ padding: 20, display: 'flex', gap: 15 }}>
+        <Indicator color="primary" />
+        <Indicator color="secondary" />
+
         <Button>Продолжить</Button>
         <Button variant="secondary">Пропустить</Button>
         <Button variant="secondary" size="small">

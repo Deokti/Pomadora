@@ -1,0 +1,22 @@
+.container {
+  --indicator-color: var(--color-indicator-primary);
+
+  display: block;
+  inline-size: 9px;
+  block-size: 9px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background-color: var(--indicator-color);
+}
+
+.primary {
+  --indicator-color: var(--color-indicator-primary);
+}
+
+.secondary {
+  --indicator-color: var(--color-indicator-secondary);
+}
+
+.shadow {
+  box-shadow: 0 0 10px 0 color-mix(in srgb, var(--indicator-color) 35%, transparent);
+}
