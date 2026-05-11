@@ -24,9 +24,12 @@ export const App = observer(() => {
         <Button variant="secondary" size="small">
           Подробнее
         </Button>
-        <ProgressLine progress={15} size="small" />
-        <ProgressLine progress={55} size="medium" variant="secondary" selected />
-        <ProgressLine progress={55} size="medium" variant="secondary" />
+
+        <div style={{ width: 200, display: 'flex', flexDirection: 'column', gap: 20 }}>
+          <ProgressLine progress={15} size="small" />
+          <ProgressLine progress={55} size="medium" variant="secondary" selected />
+          <ProgressLine progress={55} size="medium" variant="secondary" />
+        </div>
 
         <Typography variant="timer" weight="bold">
           25:00

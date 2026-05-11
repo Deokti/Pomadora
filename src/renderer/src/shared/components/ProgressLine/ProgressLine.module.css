@@ -1,3 +1,7 @@
+.container {
+  width: 100%;
+}
+
 .track {
   border-radius: 999px;
   background-color: var(--progress-track-bg);
