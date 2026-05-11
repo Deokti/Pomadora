@@ -11,13 +11,13 @@
 
 .primary .rail {
   height: 6px;
-  background-color: var(--color-progress-track);
+  background-color: var(--color-slider-primary-track);
   opacity: 1;
 }
 
 .primary .track {
   height: 6px;
-  background-color: var(--color-slider-primary);
+  background-color: var(--color-slider-primary-fill);
 }
 
 .primary .thumb {
