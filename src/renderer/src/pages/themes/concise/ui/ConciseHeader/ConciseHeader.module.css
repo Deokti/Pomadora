@@ -1,0 +1,24 @@
+.container {
+  gap: 10px;
+}
+
+.container,
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.steps {
+  margin-top: 12px;
+  display: flex;
+  gap: 3px;
+}
+
+.top {
+  width: 100%;
+}
+
+.header {
+  gap: 10px;
+  width: 100%;
+}
