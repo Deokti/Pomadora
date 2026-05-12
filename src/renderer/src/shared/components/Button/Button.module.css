@@ -16,11 +16,17 @@
 }
 
 .small {
+  padding: 7px 12px;
+  font-size: 13px;
+  border-radius: 10px;
+}
+
+.medium {
   padding: 16px 30px;
   font-size: 14px;
 }
 
-.medium {
+.large {
   padding: 20px 68px;
   font-size: 17px;
 }

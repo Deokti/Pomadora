@@ -1,4 +1,4 @@
-import { ButtonIcon, Icon, ProgressLine, Typography } from 'shared/components'
+import { Button, ProgressLine, Typography, Icon } from 'shared/components'
 
 import styles from './ConciseHeader.module.css'
 import { useMemo } from 'react'
@@ -11,7 +11,7 @@ export const ConciseHeader = () => {
           progress={item === 1 ? 34 : 0}
           selected={item === 1}
           key={item}
-          variant="secondary"
+          variant="primary"
         />
       )
     })
@@ -19,22 +19,21 @@ export const ConciseHeader = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-        <div className={styles.top}>
-          <Typography variant="eyebrow" color="subtle">
-            Рабочий сеанс
-          </Typography>
-          <Typography variant="eyebrow" color="subtle" font="mono">
-            130 мин · 8 этапов
-          </Typography>
-        </div>
+      <div className={styles.top}>
+        <Typography variant="eyebrow" color="subtle">
+          130 мин · 8 этапов
+        </Typography>
 
-        {<div className={styles.steps}>{renderSteps}</div>}
+        <Button
+          endIcon={<Icon name="exchange" size={12} color="var(--slate-500)" />}
+          size="small"
+          variant="secondary"
+        >
+          Фокус
+        </Button>
       </div>
 
-      <ButtonIcon>
-        <Icon name="settings" />
-      </ButtonIcon>
+      {<div className={styles.steps}>{renderSteps}</div>}
     </div>
   )
 }

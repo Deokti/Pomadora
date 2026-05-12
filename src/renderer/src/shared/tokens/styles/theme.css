@@ -52,6 +52,8 @@
   --lh-eyebrow: 16px;
   --ls-eyebrow: 0.08em;
 
+  --default-gap: 24px;
+
   --color-bg-app: var(--night-950);
   --main-border-radius: 32px;
   --color-bg-card: var(--night-900);

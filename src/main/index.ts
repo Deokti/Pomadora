@@ -4,8 +4,8 @@ import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/logo.ico?asset'
 
 function createWindow(): void {
-  const windowWidth = 720
-  const windowHeight = 480
+  const windowWidth = 960
+  const windowHeight = 555
 
   // Create the browser window.
   const mainWindow = new BrowserWindow({

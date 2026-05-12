@@ -1,5 +1,6 @@
 .container {
   gap: 10px;
+  flex-direction: column;
 }
 
 .container,
@@ -9,13 +10,13 @@
 }
 
 .steps {
-  margin-top: 12px;
   display: flex;
   gap: 3px;
 }
 
 .top {
   width: 100%;
+  align-items: center;
 }
 
 .header {
