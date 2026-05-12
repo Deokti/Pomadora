@@ -12,6 +12,11 @@
   background-color: var(--color-progress-active);
 }
 
+.empty .fill {
+  visibility: hidden;
+  transform: scaleX(0) !important;
+}
+
 .primary {
   --progress-track-bg: var(--color-progress-track);
 }

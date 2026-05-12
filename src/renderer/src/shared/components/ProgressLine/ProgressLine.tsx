@@ -23,7 +23,13 @@ export const ProgressLine: FC<ProgressLineProps> = ({
   ...props
 }: ProgressLineProps) => {
   const progressValue = Math.min(Math.max(progress, 0), 100)
-  const classNames = clsx(styles.container, styles[variant], selected && styles.selected, className)
+  const classNames = clsx(
+    styles.container,
+    styles[variant],
+    progressValue === 0 && styles.empty,
+    selected && styles.selected,
+    className
+  )
 
   return (
     <LinearProgress
