@@ -23,49 +23,58 @@
 /* Variants */
 
 .timer {
-  font-size: 200px;
-  line-height: 190px;
+  font-size: var(--fs-timer);
+  line-height: var(--lh-timer);
 }
 
 .timerCompact {
-  font-size: 168px;
-  letter-spacing: -7px;
+  font-size: var(--fs-timer-compact);
+  line-height: var(--lh-timer-compact);
+  letter-spacing: var(--ls-timer-compact);
 }
 
 .h1 {
-  font-size: 52px;
-  line-height: 60px;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-h1);
 }
 
 .h2 {
-  font-size: 28px;
-  line-height: 36px;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
 }
 
 .title {
-  font-size: 22px;
-  line-height: 28px;
+  font-size: var(--fs-title);
+  line-height: var(--lh-title);
 }
 
 .body {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
 }
 
 .label {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
 }
 
 .labelWide {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: var(--fs-label-wide);
+  line-height: var(--lh-label-wide);
+  letter-spacing: var(--ls-label-wide);
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  font-size: var(--fs-eyebrow);
+  line-height: var(--lh-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
 }
 
 .button {
-  font-size: 16px;
-  line-height: 22px;
+  font-size: var(--fs-button);
+  line-height: var(--lh-button);
 }
 
 /* Weights */

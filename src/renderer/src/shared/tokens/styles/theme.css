@@ -16,8 +16,41 @@
   --navy-700: #2a324a;
 
   /* Semantic */
-  --font-family-primary: "Inter Variable", "Inter", sans-serif;
-  --font-family-mono: "JetBrains Mono Variable", "JetBrains Mono", monospace;
+  --font-family-primary: "Inter Variable", "Inter", system-ui, sans-serif;
+  --font-family-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
+
+  --fs-timer: 200px;
+  --lh-timer: 190px;
+
+  --fs-timer-compact: 168px;
+  --lh-timer-compact: 0.95;
+  --ls-timer-compact: -7px;
+
+  --fs-h1: 52px;
+  --lh-h1: 60px;
+
+  --fs-h2: 28px;
+  --lh-h2: 36px;
+
+  --fs-title: 22px;
+  --lh-title: 28px;
+
+  --fs-body: 16px;
+  --lh-body: 24px;
+
+  --fs-button: 16px;
+  --lh-button: 22px;
+
+  --fs-label-wide: 18px;
+  --lh-label-wide: 24px;
+  --ls-label-wide: 0.04em;
+
+  --fs-label: 14px;
+  --lh-label: 20px;
+
+  --fs-eyebrow: 12px;
+  --lh-eyebrow: 16px;
+  --ls-eyebrow: 0.08em;
 
   --color-bg-app: var(--night-950);
   --main-border-radius: 32px;

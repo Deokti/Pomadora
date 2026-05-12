@@ -11,6 +11,7 @@ type TypographyVariant =
   | 'h2'
   | 'title'
   | 'body'
+  | 'eyebrow'
   | 'label'
   | 'labelWide'
   | 'button'

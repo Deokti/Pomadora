@@ -21,10 +21,10 @@ export const ConciseHeader = () => {
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.top}>
-          <Typography variant="labelWide" color="subtle">
+          <Typography variant="eyebrow" color="subtle">
             Рабочий сеанс
           </Typography>
-          <Typography variant="labelWide" color="subtle" font="mono">
+          <Typography variant="eyebrow" color="subtle" font="mono">
             130 мин · 8 этапов
           </Typography>
         </div>

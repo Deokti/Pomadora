@@ -12,7 +12,7 @@ export const ConciseContent = () => {
         </Typography>
       </div>
 
-      <Typography className={styles.timer} variant="timer" font="mono">
+      <Typography variant="timerCompact" font="mono">
         25:00
       </Typography>
 
