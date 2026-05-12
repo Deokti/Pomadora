@@ -5,7 +5,7 @@ import { type FC, type ReactNode } from 'react'
 import styles from './Button.module.css'
 
 export type ButtonSize = 'small' | 'medium' | 'large'
-export type ButtonVariant = 'primary' | 'secondary'
+export type ButtonVariant = 'primary' | 'secondary' | 'text'
 
 export interface ButtonProps extends Omit<MuiButtonProps, 'size' | 'variant' | 'color'> {
   children?: ReactNode

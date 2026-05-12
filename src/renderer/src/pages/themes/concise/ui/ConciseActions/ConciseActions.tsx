@@ -19,7 +19,7 @@ export const ConciseActions = () => {
         </ButtonIcon>
       </div>
 
-      <Button startIcon={<Icon name="settings" size={23} />} size="small" variant="secondary">
+      <Button startIcon={<Icon name="settings" size={22} />} size="small" variant="text">
         Настройки
       </Button>
     </div>

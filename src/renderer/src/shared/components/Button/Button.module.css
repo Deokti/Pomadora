@@ -12,6 +12,7 @@
     background-color 160ms ease,
     border-color 160ms ease,
     box-shadow 160ms ease,
+    color 160ms ease,
     filter 160ms ease;
 }
 
@@ -59,6 +60,24 @@
 
 .secondary:active {
   background-color: color-mix(in srgb, var(--color-button-secondary-bg) 90%, #000);
+}
+
+.text {
+  border: 0;
+  background-color: transparent;
+  color: var(--color-text-muted);
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
+}
+
+.text:hover {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  box-shadow: none;
+}
+
+.text:active {
+  filter: none;
 }
 
 .button:focus-visible {
