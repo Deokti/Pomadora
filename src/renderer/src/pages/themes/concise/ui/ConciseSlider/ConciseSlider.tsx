@@ -5,7 +5,7 @@ import styles from './ConciseSlider.module.css'
 export const ConciseSlider = () => {
   return (
     <div className={styles.container}>
-      <Slider className={styles.slider} variant="secondary" defaultValue={25} />
+      <Slider className={styles.slider} defaultValue={25} />
 
       <div className={styles.time}>
         <Typography color="muted" variant="label">

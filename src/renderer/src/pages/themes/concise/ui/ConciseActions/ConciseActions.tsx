@@ -5,15 +5,15 @@ import styles from './ConciseActions.module.css'
 export const ConciseActions = () => {
   return (
     <div className={styles.container}>
-      <ButtonIcon variant="main" size="medium" iconSize={14}>
+      <ButtonIcon variant="primary" iconSize={18}>
         <Icon name="start" />
       </ButtonIcon>
 
-      <ButtonIcon variant="circle" size="small" iconSize={18}>
+      <ButtonIcon variant="secondary" iconSize={22}>
         <Icon name="reset" />
       </ButtonIcon>
 
-      <ButtonIcon variant="circle" size="small" iconSize={16}>
+      <ButtonIcon variant="secondary" iconSize={20}>
         <Icon name="skip" />
       </ButtonIcon>
     </div>

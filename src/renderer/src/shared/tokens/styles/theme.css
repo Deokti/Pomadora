@@ -92,9 +92,7 @@
 
   --color-slider-primary-track: var(--navy-700);
   --color-slider-primary-fill: var(--mint-500);
-  --color-slider-secondary-track: var(--navy-700);
-  --color-slider-secondary-fill: var(--mint-500);
-  --color-slider-secondary-thumb: #F5F7FB;
-  --color-slider-secondary-thumb-ring: var(--night-950);
-  --color-slider-secondary-thumb-glow: rgb(30 216 129 / 90%);
+  --color-slider-primary-thumb: #F5F7FB;
+  --color-slider-primary-thumb-ring: var(--night-950);
+  --color-slider-primary-thumb-glow: rgb(30 216 129 / 90%);
 }

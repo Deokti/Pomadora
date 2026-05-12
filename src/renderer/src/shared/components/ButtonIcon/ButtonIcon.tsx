@@ -4,8 +4,7 @@ import { type CSSProperties } from 'react'
 
 import styles from './ButtonIcon.module.css'
 
-type ButtonIconVariant = 'rounded' | 'circle' | 'main'
-type ButtonIconSize = 'small' | 'medium'
+type ButtonIconVariant = 'primary' | 'secondary'
 
 export interface ButtonIconProps extends Omit<
   MuiIconButtonProps,
@@ -13,7 +12,6 @@ export interface ButtonIconProps extends Omit<
 > {
   iconSize?: number
   variant?: ButtonIconVariant
-  size?: ButtonIconSize
 }
 
 export const ButtonIcon = ({
@@ -21,8 +19,7 @@ export const ButtonIcon = ({
   className,
   iconSize,
   style,
-  variant = 'rounded',
-  size = 'small',
+  variant = 'secondary',
   ...props
 }: ButtonIconProps) => {
   const buttonStyles = {
@@ -32,7 +29,7 @@ export const ButtonIcon = ({
 
   return (
     <MuiIconButton
-      className={clsx(styles.container, styles[variant], styles[size], className)}
+      className={clsx(styles.container, styles[variant], className)}
       disableRipple
       style={buttonStyles}
       {...props}

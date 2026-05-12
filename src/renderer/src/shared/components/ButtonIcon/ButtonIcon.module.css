@@ -1,74 +1,63 @@
 .container {
+  --button-icon-control-size: 56px;
   --button-icon-size: 22px;
 
-  color: var(--color-button-secondary-text);
-  border: 1px solid var(--color-button-secondary-border);
-  background-color: transparent;
   inline-size: var(--button-icon-control-size);
   block-size: var(--button-icon-control-size);
-  padding: 0;
   min-width: 0;
   min-height: 0;
+  padding: 0;
   flex: 0 0 auto;
+  color: var(--color-button-secondary-text);
+  border: 1px solid var(--color-border-primary);
+  border-radius: 50%;
+  background-color: transparent;
   transition:
     background-color 160ms ease,
     border-color 160ms ease,
     box-shadow 160ms ease,
     color 160ms ease,
-    filter 160ms ease;
+    transform 120ms ease;
 }
 
 .container:hover {
-  color: var(--color-text-primary);
-  border-color: color-mix(in srgb, var(--color-button-secondary-border) 74%, #fff);
-  background-color: color-mix(in srgb, var(--color-button-secondary-bg) 76%, #fff);
-  box-shadow: 0 0 0 4px color-mix(in srgb, #fff 7%, transparent);
+  border-color: color-mix(in srgb, var(--navy-700) 60%, #fff 12%);
 }
 
 .container:active {
-  filter: brightness(0.88);
+  transform: translateY(1px);
 }
 
 .container:focus-visible {
   box-shadow: 0 0 0 4px color-mix(in srgb, #fff 16%, transparent);
 }
 
-.rounded {
-  border-radius: 10px;
-}
-
-.circle {
-  border-radius: 50%;
-}
-
-.main {
-  --button-icon-size: 20px;
+.primary {
+  --button-icon-control-size: 64px;
+  --button-icon-size: 22px;
 
   color: var(--color-button-icon-main-text);
-  border-color: transparent;
-  border-radius: 50%;
   background-color: var(--color-button-icon-main-bg);
-  box-shadow: 0 0 0 4px var(--color-button-icon-main-shadow);
-}
-
-.main:hover {
-  color: var(--color-button-icon-main-text);
-  border-color: transparent;
-  background-color: color-mix(in srgb, var(--color-button-icon-main-bg) 92%, var(--mint-500));
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-button-icon-main-shadow) 86%, #fff 14%);
-}
-
-.main:focus-visible {
   box-shadow:
     0 0 0 4px var(--color-button-icon-main-shadow),
+    0 12px 32px rgb(30 216 129 / 18%);
+}
+
+.primary:hover {
+  color: var(--color-button-icon-main-text);
+  box-shadow:
+    0 0 0 6px var(--color-button-icon-main-shadow),
+    0 16px 40px rgb(30 216 129 / 24%);
+}
+
+.primary:focus-visible {
+  box-shadow:
+    0 0 0 4px var(--color-button-icon-main-shadow),
+    0 12px 32px rgb(30 216 129 / 18%),
     0 0 0 8px color-mix(in srgb, #fff 14%, transparent);
 }
 
-.small {
-  --button-icon-control-size: 44px;
-}
-
-.medium {
+.secondary {
   --button-icon-control-size: 56px;
 }
 

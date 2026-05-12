@@ -1,62 +1,45 @@
 .container {
+  --thumb-size: 12px;
+  --slider-track-height: 6px;
+
   width: 100%;
   padding: 0;
 }
 
 .rail,
 .track {
+  height: var(--slider-track-height);
   border: none;
   border-radius: 999px;
 }
 
-.primary .rail {
-  height: 6px;
+.rail {
   background-color: var(--color-slider-primary-track);
   opacity: 1;
 }
 
-.primary .track {
-  height: 6px;
+.track {
   background-color: var(--color-slider-primary-fill);
 }
 
-.primary .thumb {
-  display: none;
-}
-
-.secondary {
-  --thumb-size: 12px;
-}
-
-.secondary .rail {
-  height: 4px;
-  background-color: var(--color-slider-secondary-track);
-  opacity: 1;
-}
-
-.secondary .track {
-  height: 4px;
-  background-color: var(--color-slider-secondary-fill);
-}
-
-.secondary .thumb {
+.thumb {
   width: var(--thumb-size);
   height: var(--thumb-size);
-  background-color: var(--color-slider-secondary-thumb);
+  background-color: var(--color-slider-primary-thumb);
   box-shadow:
-    0 0 0 3px var(--color-slider-secondary-thumb-ring),
-    0 0 7px 0 var(--color-slider-secondary-thumb-glow);
+    0 0 0 3px var(--color-slider-primary-thumb-ring),
+    0 0 7px 0 var(--color-slider-primary-thumb-glow);
 }
 
-.secondary .thumb:hover,
-.secondary .thumb:global(.Mui-focusVisible),
-.secondary .thumb:global(.Mui-active) {
+.thumb:hover,
+.thumb:global(.Mui-focusVisible),
+.thumb:global(.Mui-active) {
   box-shadow:
-    0 0 0 3px var(--color-slider-secondary-thumb-ring),
-    0 0 7px 0 var(--color-slider-secondary-thumb-glow);
+    0 0 0 3px var(--color-slider-primary-thumb-ring),
+    0 0 7px 0 var(--color-slider-primary-thumb-glow);
 }
 
-.secondary .thumb::before,
-.secondary .thumb::after {
+.thumb::before,
+.thumb::after {
   display: none;
 }
