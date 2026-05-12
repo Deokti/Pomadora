@@ -1,16 +1,29 @@
 .container {
   margin: 0;
-  font-family: inherit;
+  font-family: var(--typography-font-family);
   cursor: text;
   user-select: text;
   -webkit-app-region: no-drag;
+}
+
+/* Fonts */
+
+.fontPrimary {
+  --typography-font-family: var(--font-family-primary);
+}
+
+.fontMono {
+  --typography-font-family: var(--font-family-mono);
+}
+
+.fontInherit {
+  --typography-font-family: inherit;
 }
 
 /* Variants */
 
 .timer {
   font-size: 200px;
-  letter-spacing: -8px;
   line-height: 190px;
 }
 

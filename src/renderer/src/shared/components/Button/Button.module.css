@@ -4,6 +4,7 @@
   min-width: 0;
   border-radius: 14px;
   border: 2px solid transparent;
+  font-family: inherit;
   font-weight: bold;
   line-height: 1;
   text-transform: none;

@@ -16,6 +16,9 @@
   --navy-700: #2a324a;
 
   /* Semantic */
+  --font-family-primary: "Inter Variable", "Inter", sans-serif;
+  --font-family-mono: "JetBrains Mono Variable", "JetBrains Mono", monospace;
+
   --color-bg-app: var(--night-950);
   --main-border-radius: 32px;
   --color-bg-card: var(--night-900);
@@ -45,6 +48,9 @@
   --color-button-secondary-bg: var(--night-850);
   --color-button-secondary-border: var(--navy-750);
   --color-button-secondary-text: #FFF;
+  --color-button-icon-main-bg: #F5F7FB;
+  --color-button-icon-main-text: var(--night-950);
+  --color-button-icon-main-shadow: rgb(30 216 129 / 18%);
 
   --color-indicator-primary: var(--mint-500);
   --color-indicator-secondary: var(--green-37);

@@ -1,11 +1,15 @@
 .container {
+  --button-icon-size: 22px;
+
   color: var(--color-button-secondary-text);
   border: 1px solid var(--color-button-secondary-border);
   background-color: transparent;
-  width: auto;
-  height: auto;
+  inline-size: var(--button-icon-control-size);
+  block-size: var(--button-icon-control-size);
+  padding: 0;
   min-width: 0;
   min-height: 0;
+  flex: 0 0 auto;
   transition:
     background-color 160ms ease,
     border-color 160ms ease,
@@ -37,17 +41,40 @@
   border-radius: 50%;
 }
 
+.main {
+  --button-icon-size: 20px;
+
+  color: var(--color-button-icon-main-text);
+  border-color: transparent;
+  border-radius: 50%;
+  background-color: var(--color-button-icon-main-bg);
+  box-shadow: 0 0 0 4px var(--color-button-icon-main-shadow);
+}
+
+.main:hover {
+  color: var(--color-button-icon-main-text);
+  border-color: transparent;
+  background-color: color-mix(in srgb, var(--color-button-icon-main-bg) 92%, var(--mint-500));
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-button-icon-main-shadow) 86%, #fff 14%);
+}
+
+.main:focus-visible {
+  box-shadow:
+    0 0 0 4px var(--color-button-icon-main-shadow),
+    0 0 0 8px color-mix(in srgb, #fff 14%, transparent);
+}
+
 .small {
-  padding: 9px;
+  --button-icon-control-size: 44px;
 }
 
 .medium {
-  padding: 14px;
+  --button-icon-control-size: 56px;
 }
 
 .container svg {
-  width: auto;
-  height: auto;
+  inline-size: var(--button-icon-size);
+  block-size: var(--button-icon-size);
   margin: 0;
   flex-shrink: 0;
 }

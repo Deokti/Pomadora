@@ -12,7 +12,7 @@ export const ConciseContent = () => {
         </Typography>
       </div>
 
-      <Typography className={styles.timer} variant="timer">
+      <Typography className={styles.timer} variant="timer" font="mono">
         25:00
       </Typography>
 
@@ -20,8 +20,12 @@ export const ConciseContent = () => {
         <Slider className={styles.slider} variant="secondary" defaultValue={25} />
 
         <div className={styles.time}>
-          <Typography color="muted">00:00</Typography>
-          <Typography color="muted">25:00</Typography>
+          <Typography color="muted" font="mono">
+            00:00
+          </Typography>
+          <Typography color="muted" font="mono">
+            25:00
+          </Typography>
         </div>
       </div>
     </div>

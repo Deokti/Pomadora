@@ -27,6 +27,7 @@ type TypographyColor =
   | 'inherit'
 
 type TypographyAlign = 'left' | 'center' | 'right'
+type TypographyFont = 'primary' | 'mono' | 'inherit'
 
 export interface TypographyProps extends Omit<MuiTypographyProps, 'variant' | 'color' | 'align'> {
   children?: ReactNode
@@ -35,6 +36,13 @@ export interface TypographyProps extends Omit<MuiTypographyProps, 'variant' | 'c
   weight?: TypographyWeight
   color?: TypographyColor
   align?: TypographyAlign
+  font?: TypographyFont
+}
+
+const fontClassNames: Record<TypographyFont, string> = {
+  primary: styles.fontPrimary,
+  mono: styles.fontMono,
+  inherit: styles.fontInherit
 }
 
 export const Typography: FC<TypographyProps> = ({
@@ -44,10 +52,12 @@ export const Typography: FC<TypographyProps> = ({
   weight = 'regular',
   align = 'left',
   color = 'primary',
+  font = 'primary',
   ...props
 }: TypographyProps) => {
   const classNames = clsx(
     styles.container,
+    fontClassNames[font],
     styles[variant],
     styles[weight],
     styles[align],

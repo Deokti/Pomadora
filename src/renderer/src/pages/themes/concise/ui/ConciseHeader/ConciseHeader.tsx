@@ -24,7 +24,7 @@ export const ConciseHeader = () => {
           <Typography variant="labelWide" color="subtle">
             Рабочий сеанс
           </Typography>
-          <Typography variant="labelWide" color="subtle">
+          <Typography variant="labelWide" color="subtle" font="mono">
             130 мин · 8 этапов
           </Typography>
         </div>
