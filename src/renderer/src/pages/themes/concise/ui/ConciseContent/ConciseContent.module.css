@@ -1,5 +1,5 @@
 .container {
-  margin-top: 58px;
+  margin-top: 42px;
 }
 
 .top {
@@ -9,7 +9,12 @@
 }
 
 .slider {
-  margin-top: 30px;
+  margin-top: 24px;
+}
+
+.timer {
+  font-size: 166px;
+  line-height: 160px;
 }
 
 .time {

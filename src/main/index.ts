@@ -4,18 +4,19 @@ import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/logo.ico?asset'
 
 function createWindow(): void {
-  // const windowWidth = 720
-  // const windowHeight = 480
+  const windowWidth = 720
+  const windowHeight = 480
 
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    // width: windowWidth,
-    // height: windowHeight,
-    // minWidth: windowWidth,
-    // minHeight: windowHeight,
-    // maxWidth: windowWidth,
-    // maxHeight: windowHeight,
-    // resizable: false,
+    width: windowWidth,
+    height: windowHeight,
+    minWidth: windowWidth,
+    minHeight: windowHeight,
+    maxWidth: windowWidth,
+    maxHeight: windowHeight,
+    resizable: false,
+    useContentSize: true,
     show: false,
     frame: false,
     transparent: true,
