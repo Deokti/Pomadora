@@ -6,7 +6,7 @@ export const ConciseContent = () => {
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <Indicator color="primary" shadow />
+        <Indicator color="primary" pulse shadow />
         <Typography variant="eyebrow">Фокус · сессия 1 из 4</Typography>
       </div>
 

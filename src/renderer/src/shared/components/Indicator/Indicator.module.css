@@ -20,3 +20,26 @@
 .shadow {
   box-shadow: 0 0 10px 0 color-mix(in srgb, var(--indicator-color) 35%, transparent);
 }
+
+.pulse {
+  animation: indicator-pulse 1600ms ease-in-out infinite;
+}
+
+@keyframes indicator-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--indicator-color) 34%, transparent);
+    transform: scale(1);
+  }
+
+  50% {
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--indicator-color) 0%, transparent);
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse {
+    animation: none;
+  }
+}
