@@ -83,3 +83,8 @@
 .button:focus-visible {
   box-shadow: 0 0 0 4px color-mix(in srgb, #fff 16%, transparent);
 }
+
+.button :global(.MuiButton-startIcon) {
+  margin-right: 4px;
+  margin-left: 0;
+}
