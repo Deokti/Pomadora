@@ -5,7 +5,7 @@ import icon from '../../resources/logo.ico?asset'
 
 function createWindow(): void {
   const windowWidth = 960
-  const windowHeight = 555
+  const windowHeight = 510
 
   // Create the browser window.
   const mainWindow = new BrowserWindow({

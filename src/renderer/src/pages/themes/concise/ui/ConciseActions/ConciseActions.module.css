@@ -1,6 +1,14 @@
 .container {
-  margin-top: 26px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.right {
+  margin: auto 0;
 }
