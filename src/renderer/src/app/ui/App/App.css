@@ -26,6 +26,7 @@ body {
   padding: 36px 56px 32px;
   margin: 0;
   background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-subtle);
   border-radius: 24px;
   overflow: hidden;
   -webkit-app-region: drag;
