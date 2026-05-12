@@ -11,6 +11,7 @@
 .timer {
   font-size: 200px;
   letter-spacing: -8px;
+  line-height: 190px;
 }
 
 .timerCompact {

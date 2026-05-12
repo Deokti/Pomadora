@@ -1,0 +1,19 @@
+.container {
+  margin-top: 58px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.slider {
+  margin-top: 30px;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
