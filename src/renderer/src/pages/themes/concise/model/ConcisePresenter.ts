@@ -90,9 +90,8 @@ export class ConcisePresenter {
     const totalStages = activeTimerSettings.focusesBeforeLongBreak * 2
     const activeStage = session.phaseIndex
     const durationSec = this.getCurrentPhaseDurationSec()
-    const activeProgress = durationSec === 0
-      ? 0
-      : Math.min((session.elapsedSec / durationSec) * 100, 100)
+    const activeProgress =
+      durationSec === 0 ? 0 : Math.min((session.elapsedSec / durationSec) * 100, 100)
 
     return {
       totalDurationMin: this.getTotalDurationMin(activeTimerSettings),
@@ -143,5 +142,9 @@ export class ConcisePresenter {
 
   pause(): void {
     this.pomodoroStore.pause()
+  }
+
+  reset(): void {
+    this.pomodoroStore.reset()
   }
 }

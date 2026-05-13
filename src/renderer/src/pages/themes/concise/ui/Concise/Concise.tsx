@@ -18,6 +18,7 @@ export const Concise = observer(() => {
         view={presenter.actions}
         onStart={presenter.start}
         onPause={presenter.pause}
+        onReset={presenter.reset}
       />
     </div>
   )

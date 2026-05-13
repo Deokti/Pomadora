@@ -87,4 +87,10 @@ export class PomodoroStore implements PomodoroState {
       this.pause()
     }
   }
+
+  reset(): void {
+    this.session.isRunning = false
+    this.clearTimer()
+    this.session.elapsedSec = 0
+  }
 }

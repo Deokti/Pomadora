@@ -7,9 +7,10 @@ type ConciseActionsProps = {
   view: ConciseActionsView
   onStart: () => void
   onPause: () => void
+  onReset: () => void
 }
 
-export const ConciseActions = ({ view, onStart, onPause }: ConciseActionsProps) => {
+export const ConciseActions = ({ view, onStart, onPause, onReset }: ConciseActionsProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
@@ -17,7 +18,7 @@ export const ConciseActions = ({ view, onStart, onPause }: ConciseActionsProps) 
           {view.isRunning ? <Icon name="stop" /> : <Icon name="start" />}
         </ButtonIcon>
 
-        <ButtonIcon variant="secondary" iconSize={22}>
+        <ButtonIcon variant="secondary" iconSize={22} onClick={onReset}>
           <Icon name="reset" />
         </ButtonIcon>
 
