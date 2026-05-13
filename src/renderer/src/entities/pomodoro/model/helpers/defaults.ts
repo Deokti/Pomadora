@@ -1,5 +1,5 @@
-import { PomodoroPhase } from './types'
-import type { PomodoroSessionState, PomodoroTimerSettings } from './types'
+import { PomodoroPhase } from '../types'
+import type { PomodoroSessionState, PomodoroTimerSettings } from '../types'
 
 export const defaultPomodoroTimerSettings: PomodoroTimerSettings = {
   focusDurationMin: 25,

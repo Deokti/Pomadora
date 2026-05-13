@@ -12,7 +12,7 @@ export const Concise = observer(() => {
   return (
     <div className={styles.container}>
       <ConciseHeader view={presenter.header} />
-      <ConciseContent />
+      <ConciseContent view={presenter.content} />
       <ConciseSlider />
       <ConciseActions />
     </div>

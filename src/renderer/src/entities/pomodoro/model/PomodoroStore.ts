@@ -1,7 +1,7 @@
 import { injectable } from 'inversify'
 import { makeAutoObservable } from 'mobx'
 
-import { createDefaultPomodoroSession, defaultPomodoroTimerSettings } from './defaults'
+import { createDefaultPomodoroSession, defaultPomodoroTimerSettings } from './helpers/defaults'
 import type { PomodoroSessionState, PomodoroState, PomodoroTimerSettings } from './types'
 
 @injectable()
