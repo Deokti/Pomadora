@@ -25,6 +25,12 @@ export type ConciseContentView = {
   timerSeconds: string
 }
 
+export type ConciseSliderView = {
+  elapsedFormatted: string
+  durationFormatted: string
+  progress: number
+}
+
 @injectable()
 export class ConcisePresenter {
   constructor(@inject(PomodoroStore) private pomodoroStore: PomodoroStore) {
@@ -98,6 +104,17 @@ export class ConcisePresenter {
       statusText: this.getStatusText(),
       timerMinutes,
       timerSeconds
+    }
+  }
+
+  get slider(): ConciseSliderView {
+    const { session } = this.pomodoroStore
+    const durationSec = this.getCurrentPhaseDurationSec()
+
+    return {
+      elapsedFormatted: this.formatDurationSec(session.elapsedSec),
+      durationFormatted: this.formatDurationSec(durationSec),
+      progress: durationSec === 0 ? 0 : Math.min((session.elapsedSec / durationSec) * 100, 100)
     }
   }
 }
