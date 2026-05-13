@@ -1,27 +1,18 @@
 import { Button, ProgressLine, Typography, Icon } from 'shared/components'
 
+import type { ConciseHeaderView } from '../../model/ConcisePresenter'
 import styles from './ConciseHeader.module.css'
-import { useMemo } from 'react'
 
-export const ConciseHeader = () => {
-  const renderSteps = useMemo(() => {
-    return [1, 2, 3, 4, 5, 6, 7].map((item) => {
-      return (
-        <ProgressLine
-          progress={item === 1 ? 34 : 0}
-          selected={item === 1}
-          key={item}
-          variant="primary"
-        />
-      )
-    })
-  }, [])
+type ConciseHeaderProps = {
+  view: ConciseHeaderView
+}
 
+export const ConciseHeader = ({ view }: ConciseHeaderProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.top}>
         <Typography variant="eyebrow" color="subtle">
-          130 мин · 8 этапов
+          {view.totalDurationMin} мин · {view.totalStages} этапов
         </Typography>
 
         <Button
@@ -29,11 +20,15 @@ export const ConciseHeader = () => {
           size="small"
           variant="secondary"
         >
-          Фокус
+          Лаконичная (тема)
         </Button>
       </div>
 
-      {<div className={styles.steps}>{renderSteps}</div>}
+      <div className={styles.steps}>
+        {view.stages.map((stage) => (
+          <ProgressLine progress={stage.progress} key={stage.id} variant="primary" />
+        ))}
+      </div>
     </div>
   )
 }
