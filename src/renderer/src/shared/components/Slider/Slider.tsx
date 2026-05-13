@@ -8,11 +8,7 @@ export interface SliderProps extends Omit<MuiSliderProps, 'className' | 'color' 
   className?: string
 }
 
-export const Slider: FC<SliderProps> = ({
-  className,
-  step = 0.1,
-  ...props
-}: SliderProps) => {
+export const Slider: FC<SliderProps> = ({ className, step = 0.1, ...props }: SliderProps) => {
   return (
     <MuiSlider
       className={clsx(styles.container, className)}

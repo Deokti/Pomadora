@@ -23,23 +23,6 @@
 }
 
 .thumb {
-  width: var(--thumb-size);
-  height: var(--thumb-size);
-  background-color: var(--color-slider-primary-thumb);
-  box-shadow:
-    0 0 0 3px var(--color-slider-primary-thumb-ring),
-    0 0 7px 0 var(--color-slider-primary-thumb-glow);
-}
-
-.thumb:hover,
-.thumb:global(.Mui-focusVisible),
-.thumb:global(.Mui-active) {
-  box-shadow:
-    0 0 0 3px var(--color-slider-primary-thumb-ring),
-    0 0 7px 0 var(--color-slider-primary-thumb-glow);
-}
-
-.thumb::before,
-.thumb::after {
   display: none;
 }
+
