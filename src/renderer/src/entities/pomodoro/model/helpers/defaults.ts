@@ -2,11 +2,11 @@ import { PomodoroPhase } from '../types'
 import type { PomodoroSessionState, PomodoroTimerSettings } from '../types'
 
 export const defaultPomodoroTimerSettings: PomodoroTimerSettings = {
-  focusDurationMin: 25,
-  shortBreakDurationMin: 5,
-  longBreakDurationMin: 15,
+  focusDurationMin: 5,
+  shortBreakDurationMin: 2,
+  longBreakDurationMin: 3,
   focusesBeforeLongBreak: 4,
-  autoStartBreaks: true,
+  autoStartBreaks: false,
   autoStartFocus: false
 }
 

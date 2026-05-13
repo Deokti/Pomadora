@@ -6,7 +6,6 @@ import styles from './ConciseHeader.module.css'
 type ConciseHeaderProps = {
   view: ConciseHeaderView
 }
-
 export const ConciseHeader = ({ view }: ConciseHeaderProps) => {
   return (
     <div className={styles.container}>
@@ -28,9 +27,8 @@ export const ConciseHeader = ({ view }: ConciseHeaderProps) => {
         {view.stages.map((stage) => (
           <ProgressLine
             progress={stage.progress}
-            selected={stage.selected}
             key={stage.id}
-            variant="primary"
+            variant={stage.variant}
           />
         ))}
       </div>

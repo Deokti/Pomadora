@@ -2,7 +2,7 @@ import Box, { type BoxProps } from '@mui/material/Box'
 import clsx from 'clsx'
 import styles from './Indicator.module.css'
 
-type IndicatorColor = 'primary' | 'secondary'
+type IndicatorColor = 'focus' | 'break' | 'long'
 
 export interface IndicatorProps extends Omit<BoxProps, 'color'> {
   className?: string
@@ -14,7 +14,7 @@ export interface IndicatorProps extends Omit<BoxProps, 'color'> {
 export const Indicator = ({
   shadow,
   pulse,
-  color = 'primary',
+  color = 'focus',
   className,
   ...props
 }: IndicatorProps) => {

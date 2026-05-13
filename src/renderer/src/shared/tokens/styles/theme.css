@@ -95,4 +95,8 @@
   --color-slider-primary-thumb: #F5F7FB;
   --color-slider-primary-thumb-ring: var(--night-950);
   --color-slider-primary-thumb-glow: rgb(30 216 129 / 90%);
+
+  --color-phase-focus: var(--mint-500);
+  --color-phase-break: #4EC5E8;
+  --color-phase-long: #A78BFA;
 }

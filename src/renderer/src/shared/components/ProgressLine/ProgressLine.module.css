@@ -1,15 +1,26 @@
 .container {
+  --progress-fill-bg: var(--color-phase-focus);
   width: 100%;
-}
-
-.track {
+  --progress-track-bg: var(--color-progress-track);
   border-radius: 999px;
   background-color: var(--progress-track-bg);
 }
 
+.focus {
+  --progress-fill-bg: var(--color-phase-focus);
+}
+
+.break {
+  --progress-fill-bg: var(--color-phase-break);
+}
+
+.long {
+  --progress-fill-bg: var(--color-phase-long);
+}
+
 .fill {
   border-radius: inherit;
-  background-color: var(--color-progress-active);
+  background-color: var(--progress-fill-bg);
 }
 
 .empty .fill {
@@ -17,19 +28,8 @@
   transform: scaleX(0) !important;
 }
 
-.primary {
-  --progress-track-bg: var(--color-progress-track);
-}
 
-.secondary {
-  --progress-track-bg: transparent;
-  border: 1px solid var(--color-progress-track);
-}
 
-.secondary.selected {
-  --progress-track-bg: var(--color-progress-track);
-  border-color: transparent;
-}
 
 .small {
   height: 6px;

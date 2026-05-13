@@ -36,6 +36,39 @@ export class PomodoroStore implements PomodoroState {
     this.timerId = null
   }
 
+  private getNextSession(): PomodoroSessionState {
+    const nextPhaseIndex = this.session.phaseIndex + 1
+    const totalStages = this.activeTimerSettings.focusesBeforeLongBreak * 2
+
+    if (nextPhaseIndex >= totalStages) {
+      return createDefaultPomodoroSession()
+    }
+
+    const focusIndex = Math.floor(nextPhaseIndex / 2) + 1
+    const phase =
+      nextPhaseIndex % 2 === 0
+        ? PomodoroPhase.FOCUS
+        : focusIndex === this.activeTimerSettings.focusesBeforeLongBreak
+          ? PomodoroPhase.LONG_BREAK
+          : PomodoroPhase.SHORT_BREAK
+
+    return {
+      phase,
+      phaseIndex: nextPhaseIndex,
+      focusIndex,
+      isRunning: false,
+      elapsedSec: 0
+    }
+  }
+
+  private shouldAutoStartPhase(phase: PomodoroPhase): boolean {
+    if (phase === PomodoroPhase.FOCUS) {
+      return this.activeTimerSettings.autoStartFocus
+    }
+
+    return this.activeTimerSettings.autoStartBreaks
+  }
+
   /**
    * Применяет настройки таймера к текущему pomodoro-циклу.
    *
@@ -44,16 +77,6 @@ export class PomodoroStore implements PomodoroState {
    */
   applyTimerSettings(settings: PomodoroTimerSettings): void {
     this.activeTimerSettings = { ...settings }
-  }
-
-  /**
-   * Заменяет текущее положение внутри pomodoro-цикла.
-   *
-   * Это минимальный технический метод на время, пока нет отдельных actions
-   * вроде start, pause, reset и перехода к следующему этапу.
-   */
-  setSession(session: PomodoroSessionState): void {
-    this.session = session
   }
 
   /** Запускает отсчёт текущего этапа pomodoro. */
@@ -92,5 +115,14 @@ export class PomodoroStore implements PomodoroState {
     this.session.isRunning = false
     this.clearTimer()
     this.session.elapsedSec = 0
+  }
+
+  finish(): void {
+    this.clearTimer()
+    this.session = this.getNextSession()
+
+    if (this.shouldAutoStartPhase(this.session.phase)) {
+      this.start()
+    }
   }
 }

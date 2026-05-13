@@ -7,8 +7,11 @@ import {
 } from 'entities/pomodoro'
 import { makeAutoObservable } from 'mobx'
 
+export type ConciseStageVariant = 'focus' | 'break' | 'long'
+
 export type ConciseStageView = {
   id: number
+  variant: ConciseStageVariant
   progress: number
   selected: boolean
 }
@@ -17,6 +20,7 @@ export type ConciseHeaderView = {
   totalDurationMin: number
   totalStages: number
   phaseLabel: string
+  currentPhase: PomodoroPhase
   stages: ConciseStageView[]
 }
 
@@ -24,6 +28,7 @@ export type ConciseContentView = {
   statusText: string
   timerMinutes: string
   timerSeconds: string
+  currentPhase: PomodoroPhase
 }
 
 export type ConciseSliderView = {
@@ -85,6 +90,14 @@ export class ConcisePresenter {
     return `${pomodoroPhaseLabel[session.phase]} · после ${activeTimerSettings.focusesBeforeLongBreak} сессий`
   }
 
+  private getStageVariant(stageIndex: number, totalStages: number): ConciseStageVariant {
+    if (stageIndex % 2 === 0) {
+      return 'focus'
+    }
+
+    return stageIndex === totalStages - 1 ? 'long' : 'break'
+  }
+
   get header(): ConciseHeaderView {
     const { activeTimerSettings, session } = this.pomodoroStore
     const totalStages = activeTimerSettings.focusesBeforeLongBreak * 2
@@ -96,9 +109,11 @@ export class ConcisePresenter {
     return {
       totalDurationMin: this.getTotalDurationMin(activeTimerSettings),
       totalStages,
+      currentPhase: session.phase,
       phaseLabel: pomodoroPhaseLabel[session.phase],
       stages: Array.from({ length: totalStages }).map((_, index) => ({
         id: index,
+        variant: this.getStageVariant(index, totalStages),
         progress: index < activeStage ? 100 : index === activeStage ? activeProgress : 0,
         selected: index === activeStage
       }))
@@ -113,7 +128,8 @@ export class ConcisePresenter {
     return {
       statusText: this.getStatusText(),
       timerMinutes,
-      timerSeconds
+      timerSeconds,
+      currentPhase: session.phase
     }
   }
 
@@ -146,5 +162,9 @@ export class ConcisePresenter {
 
   reset(): void {
     this.pomodoroStore.reset()
+  }
+
+  finish(): void {
+    this.pomodoroStore.finish()
   }
 }

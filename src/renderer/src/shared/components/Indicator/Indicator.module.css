@@ -9,12 +9,16 @@
   background-color: var(--indicator-color);
 }
 
-.primary {
-  --indicator-color: var(--color-indicator-primary);
+.focus {
+  --indicator-color: var(--color-phase-focus);
 }
 
-.secondary {
-  --indicator-color: var(--color-indicator-secondary);
+.break {
+  --indicator-color: var(--color-phase-break);
+}
+
+.long {
+  --indicator-color: var(--color-phase-long);
 }
 
 .shadow {

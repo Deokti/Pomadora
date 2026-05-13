@@ -1,6 +1,5 @@
-import { FaPlay, FaPause } from 'react-icons/fa'
 import { RiResetRightLine } from 'react-icons/ri'
-import { FaExchangeAlt, FaStop } from 'react-icons/fa'
+import { FaExchangeAlt, FaStop, FaPause, FaPlay } from 'react-icons/fa'
 import { IoPlayForwardSharp } from 'react-icons/io5'
 
 import { CiSettings } from 'react-icons/ci'

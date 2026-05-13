@@ -4,12 +4,14 @@ import { type FC } from 'react'
 
 import styles from './ProgressLine.module.css'
 
-export type ProgressLineVariant = 'primary' | 'secondary'
+export type ProgressLineVariant = 'focus' | 'break' | 'long'
 export type ProgressLineSize = 'small' | 'medium'
 
-export interface ProgressLineProps extends Omit<LinearProgressProps, 'value' | 'variant' | 'color'> {
+export interface ProgressLineProps extends Omit<
+  LinearProgressProps,
+  'value' | 'variant' | 'color'
+> {
   progress: number
-  selected?: boolean
   variant?: ProgressLineVariant
   size?: ProgressLineSize
 }
@@ -17,8 +19,7 @@ export interface ProgressLineProps extends Omit<LinearProgressProps, 'value' | '
 export const ProgressLine: FC<ProgressLineProps> = ({
   progress,
   className,
-  selected,
-  variant = 'primary',
+  variant = 'focus',
   size = 'small',
   ...props
 }: ProgressLineProps) => {
@@ -27,13 +28,12 @@ export const ProgressLine: FC<ProgressLineProps> = ({
     styles.container,
     styles[variant],
     progressValue === 0 && styles.empty,
-    selected && styles.selected,
     className
   )
 
   return (
     <LinearProgress
-      className={clsx(classNames, styles[size], styles.track)}
+      className={clsx(classNames, styles[size])}
       classes={{
         bar: styles.fill
       }}
