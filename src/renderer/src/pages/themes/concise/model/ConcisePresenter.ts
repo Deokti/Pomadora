@@ -10,6 +10,7 @@ import { makeAutoObservable } from 'mobx'
 export type ConciseStageView = {
   id: number
   progress: number
+  selected: boolean
 }
 
 export type ConciseHeaderView = {
@@ -29,6 +30,10 @@ export type ConciseSliderView = {
   elapsedFormatted: string
   durationFormatted: string
   progress: number
+}
+
+export type ConciseActionsView = {
+  isRunning: boolean
 }
 
 @injectable()
@@ -83,6 +88,11 @@ export class ConcisePresenter {
   get header(): ConciseHeaderView {
     const { activeTimerSettings, session } = this.pomodoroStore
     const totalStages = activeTimerSettings.focusesBeforeLongBreak * 2
+    const activeStage = session.phaseIndex
+    const durationSec = this.getCurrentPhaseDurationSec()
+    const activeProgress = durationSec === 0
+      ? 0
+      : Math.min((session.elapsedSec / durationSec) * 100, 100)
 
     return {
       totalDurationMin: this.getTotalDurationMin(activeTimerSettings),
@@ -90,7 +100,8 @@ export class ConcisePresenter {
       phaseLabel: pomodoroPhaseLabel[session.phase],
       stages: Array.from({ length: totalStages }).map((_, index) => ({
         id: index,
-        progress: 0
+        progress: index < activeStage ? 100 : index === activeStage ? activeProgress : 0,
+        selected: index === activeStage
       }))
     }
   }
@@ -116,5 +127,21 @@ export class ConcisePresenter {
       durationFormatted: this.formatDurationSec(durationSec),
       progress: durationSec === 0 ? 0 : Math.min((session.elapsedSec / durationSec) * 100, 100)
     }
+  }
+
+  get actions(): ConciseActionsView {
+    const { session } = this.pomodoroStore
+
+    return {
+      isRunning: session.isRunning
+    }
+  }
+
+  start(): void {
+    this.pomodoroStore.start()
+  }
+
+  pause(): void {
+    this.pomodoroStore.pause()
   }
 }

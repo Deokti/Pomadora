@@ -1,13 +1,20 @@
 import { Button, ButtonIcon, Icon } from 'shared/components'
 
 import styles from './ConciseActions.module.css'
+import { ConciseActionsView } from '../../model/ConcisePresenter'
 
-export const ConciseActions = () => {
+type ConciseActionsProps = {
+  view: ConciseActionsView
+  onStart: () => void
+  onPause: () => void
+}
+
+export const ConciseActions = ({ view, onStart, onPause }: ConciseActionsProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-        <ButtonIcon variant="primary" iconSize={18}>
-          <Icon name="start" />
+        <ButtonIcon variant="primary" iconSize={18} onClick={view.isRunning ? onPause : onStart}>
+          {view.isRunning ? <Icon name="stop" /> : <Icon name="start" />}
         </ButtonIcon>
 
         <ButtonIcon variant="secondary" iconSize={22}>

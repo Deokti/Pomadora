@@ -26,7 +26,12 @@ export const ConciseHeader = ({ view }: ConciseHeaderProps) => {
 
       <div className={styles.steps}>
         {view.stages.map((stage) => (
-          <ProgressLine progress={stage.progress} key={stage.id} variant="primary" />
+          <ProgressLine
+            progress={stage.progress}
+            selected={stage.selected}
+            key={stage.id}
+            variant="primary"
+          />
         ))}
       </div>
     </div>

@@ -1,12 +1,12 @@
 import { FaPlay, FaPause } from 'react-icons/fa'
 import { RiResetRightLine } from 'react-icons/ri'
-import { FaExchangeAlt } from 'react-icons/fa'
+import { FaExchangeAlt, FaStop } from 'react-icons/fa'
 import { IoPlayForwardSharp } from 'react-icons/io5'
 
 import { CiSettings } from 'react-icons/ci'
 import { IconType, IconBaseProps } from 'react-icons'
 
-export type IconName = 'start' | 'pause' | 'settings' | 'reset' | 'skip' | 'exchange'
+export type IconName = 'start' | 'pause' | 'settings' | 'reset' | 'skip' | 'exchange' | 'stop'
 
 const Icons: Record<IconName, IconType> = {
   start: FaPlay,
@@ -14,7 +14,8 @@ const Icons: Record<IconName, IconType> = {
   settings: CiSettings,
   reset: RiResetRightLine,
   skip: IoPlayForwardSharp,
-  exchange: FaExchangeAlt
+  exchange: FaExchangeAlt,
+  stop: FaStop
 }
 
 export interface IconProps extends IconBaseProps {
