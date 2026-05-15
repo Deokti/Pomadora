@@ -1,18 +1,18 @@
-import { injectable } from 'inversify'
+import { inject, injectable } from 'inversify'
 import { makeAutoObservable } from 'mobx'
 
 import { createDefaultPomodoroSession, defaultPomodoroTimerSettings } from './helpers/defaults'
 import { PomodoroPhase } from './types'
 import type { PomodoroSessionState, PomodoroState, PomodoroTimerSettings } from './types'
+import { TimerServiceImpl } from 'shared/services'
 
 @injectable()
 export class PomodoroStore implements PomodoroState {
   activeTimerSettings: PomodoroTimerSettings = { ...defaultPomodoroTimerSettings }
   session: PomodoroSessionState = createDefaultPomodoroSession()
-  private timerId: number | null = null
 
-  constructor() {
-    makeAutoObservable<this, 'timerId'>(this, { timerId: false }, { autoBind: true })
+  constructor(@inject(TimerServiceImpl) private timerService: TimerServiceImpl) {
+    makeAutoObservable(this, {}, { autoBind: true })
   }
 
   private getCurrentPhaseDurationSec(): number {
@@ -25,15 +25,6 @@ export class PomodoroStore implements PomodoroState {
     }
 
     return this.activeTimerSettings.longBreakDurationMin * 60
-  }
-
-  private clearTimer(): void {
-    if (this.timerId === null) {
-      return
-    }
-
-    window.clearInterval(this.timerId)
-    this.timerId = null
   }
 
   private getNextSession(): PomodoroSessionState {
@@ -90,13 +81,13 @@ export class PomodoroStore implements PomodoroState {
     }
 
     this.session.isRunning = true
-    this.timerId = window.setInterval(this.tick, 1000)
+    this.timerService.start(this.tick, 1000)
   }
 
   /** Останавливает отсчёт текущего этапа без сброса прошедшего времени. */
   pause(): void {
     this.session.isRunning = false
-    this.clearTimer()
+    this.timerService.stop()
   }
 
   /** Увеличивает прошедшее время текущего этапа на одну секунду. */
@@ -113,12 +104,12 @@ export class PomodoroStore implements PomodoroState {
 
   reset(): void {
     this.session.isRunning = false
-    this.clearTimer()
+    this.timerService.stop()
     this.session.elapsedSec = 0
   }
 
   finish(): void {
-    this.clearTimer()
+    this.timerService.stop()
     this.session = this.getNextSession()
 
     if (this.shouldAutoStartPhase(this.session.phase)) {
