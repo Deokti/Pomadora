@@ -3,8 +3,8 @@ import {
   PomodoroPhase,
   PomodoroStore,
   pomodoroPhaseLabel,
-  type PomodoroTimerSettings,
-  getCurrentPhaseDurationSec
+  getCurrentPhaseDurationSec,
+  getPomodoroTotalDurationMin
 } from 'entities/pomodoro'
 import { makeAutoObservable } from 'mobx'
 import { formatDurationSec } from 'shared/utils'
@@ -49,14 +49,6 @@ export class ConcisePresenter {
     makeAutoObservable(this, {}, { autoBind: true })
   }
 
-  private getTotalDurationMin(activeTimerSettings: PomodoroTimerSettings): number {
-    return (
-      activeTimerSettings.focusDurationMin * activeTimerSettings.focusesBeforeLongBreak +
-      activeTimerSettings.shortBreakDurationMin * (activeTimerSettings.focusesBeforeLongBreak - 1) +
-      activeTimerSettings.longBreakDurationMin
-    )
-  }
-
   private getCurrentPhaseDurationSec(): number {
     return getCurrentPhaseDurationSec(
       this.pomodoroStore.activeTimerSettings,
@@ -95,7 +87,7 @@ export class ConcisePresenter {
       durationSec === 0 ? 0 : Math.min((session.elapsedSec / durationSec) * 100, 100)
 
     return {
-      totalDurationMin: this.getTotalDurationMin(activeTimerSettings),
+      totalDurationMin: getPomodoroTotalDurationMin(activeTimerSettings),
       totalStages,
       currentPhase: session.phase,
       phaseLabel: pomodoroPhaseLabel[session.phase],

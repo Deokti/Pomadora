@@ -1,11 +1,14 @@
 import { inject, injectable } from 'inversify'
 import { makeAutoObservable } from 'mobx'
 
-import { createDefaultPomodoroSession, defaultPomodoroTimerSettings } from './helpers/defaults'
+import {
+  createDefaultPomodoroSession,
+  defaultPomodoroTimerSettings,
+  getCurrentPhaseDurationSec
+} from './helpers'
 import { PomodoroPhase } from './types'
 import type { PomodoroSessionState, PomodoroState, PomodoroTimerSettings } from './types'
 import { TimerServiceImpl } from 'shared/services'
-import { getCurrentPhaseDurationSec } from 'entities/pomodoro'
 
 @injectable()
 export class PomodoroStore implements PomodoroState {
