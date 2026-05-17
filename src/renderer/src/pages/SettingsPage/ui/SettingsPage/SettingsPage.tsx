@@ -1,11 +1,18 @@
+import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AppRoute } from 'shared/routes/AppRoute'
 import { Button, Chip, Chunk, Flex, Icon, Typography } from 'shared/components'
+import { useKeyDown } from 'shared/hooks'
 
 import styles from './SettingsPage.module.css'
 
 export const SettingsPage = () => {
   const navigate = useNavigate()
+  const navigateToTimer = useCallback(() => {
+    navigate(AppRoute.TIMER)
+  }, [navigate])
+
+  useKeyDown('Escape', navigateToTimer)
 
   return (
     <Flex className={styles.container} direction="column">
@@ -15,7 +22,7 @@ export const SettingsPage = () => {
           hoverEffect="pill-shift"
           size="small"
           variant="text"
-          onClick={() => navigate(AppRoute.TIMER)}
+          onClick={navigateToTimer}
         >
           <Typography variant="button" weight="semibold" className={styles.title}>
             Настройки
