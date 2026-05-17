@@ -1,1 +1,0 @@
-export { Concise } from './concise'

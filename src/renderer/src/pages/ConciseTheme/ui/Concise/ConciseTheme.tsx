@@ -6,7 +6,7 @@ import styles from './Concise.module.css'
 import { observer } from 'mobx-react-lite'
 import { useConcisePresenter } from '../../model/hooks/useConcisePresenter'
 
-export const Concise = observer(() => {
+export const ConciseTheme = observer(() => {
   const presenter = useConcisePresenter()
 
   return (
