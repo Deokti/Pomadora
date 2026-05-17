@@ -5,6 +5,7 @@ import { createDefaultPomodoroSession, defaultPomodoroTimerSettings } from './he
 import { PomodoroPhase } from './types'
 import type { PomodoroSessionState, PomodoroState, PomodoroTimerSettings } from './types'
 import { TimerServiceImpl } from 'shared/services'
+import { getCurrentPhaseDurationSec } from 'entities/pomodoro'
 
 @injectable()
 export class PomodoroStore implements PomodoroState {
@@ -16,15 +17,7 @@ export class PomodoroStore implements PomodoroState {
   }
 
   private getCurrentPhaseDurationSec(): number {
-    if (this.session.phase === PomodoroPhase.FOCUS) {
-      return this.activeTimerSettings.focusDurationMin * 60
-    }
-
-    if (this.session.phase === PomodoroPhase.SHORT_BREAK) {
-      return this.activeTimerSettings.shortBreakDurationMin * 60
-    }
-
-    return this.activeTimerSettings.longBreakDurationMin * 60
+    return getCurrentPhaseDurationSec(this.activeTimerSettings, this.session.phase)
   }
 
   private getNextSession(): PomodoroSessionState {

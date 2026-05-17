@@ -3,9 +3,11 @@ import {
   PomodoroPhase,
   PomodoroStore,
   pomodoroPhaseLabel,
-  type PomodoroTimerSettings
+  type PomodoroTimerSettings,
+  getCurrentPhaseDurationSec
 } from 'entities/pomodoro'
 import { makeAutoObservable } from 'mobx'
+import { formatDurationSec } from 'shared/utils'
 
 export type ConciseStageVariant = 'focus' | 'break' | 'long'
 
@@ -56,24 +58,10 @@ export class ConcisePresenter {
   }
 
   private getCurrentPhaseDurationSec(): number {
-    const { activeTimerSettings, session } = this.pomodoroStore
-
-    if (session.phase === PomodoroPhase.FOCUS) {
-      return activeTimerSettings.focusDurationMin * 60
-    }
-
-    if (session.phase === PomodoroPhase.SHORT_BREAK) {
-      return activeTimerSettings.shortBreakDurationMin * 60
-    }
-
-    return activeTimerSettings.longBreakDurationMin * 60
-  }
-
-  private formatDurationSec(durationSec: number): string {
-    const minutes = Math.floor(durationSec / 60)
-    const seconds = durationSec % 60
-
-    return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
+    return getCurrentPhaseDurationSec(
+      this.pomodoroStore.activeTimerSettings,
+      this.pomodoroStore.session.phase
+    )
   }
 
   private getStatusText(): string {
@@ -123,7 +111,7 @@ export class ConcisePresenter {
   get content(): ConciseContentView {
     const { session } = this.pomodoroStore
     const remainingSec = Math.max(this.getCurrentPhaseDurationSec() - session.elapsedSec, 0)
-    const [timerMinutes, timerSeconds] = this.formatDurationSec(remainingSec).split(':')
+    const [timerMinutes, timerSeconds] = formatDurationSec(remainingSec).split(':')
 
     return {
       statusText: this.getStatusText(),
@@ -138,8 +126,8 @@ export class ConcisePresenter {
     const durationSec = this.getCurrentPhaseDurationSec()
 
     return {
-      elapsedFormatted: this.formatDurationSec(session.elapsedSec),
-      durationFormatted: this.formatDurationSec(durationSec),
+      elapsedFormatted: formatDurationSec(session.elapsedSec),
+      durationFormatted: formatDurationSec(durationSec),
       progress: durationSec === 0 ? 0 : Math.min((session.elapsedSec / durationSec) * 100, 100)
     }
   }
