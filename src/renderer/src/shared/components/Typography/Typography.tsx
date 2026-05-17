@@ -38,6 +38,7 @@ export interface TypographyProps extends Omit<MuiTypographyProps, 'variant' | 'c
   color?: TypographyColor
   align?: TypographyAlign
   font?: TypographyFont
+  uppercase?: boolean
 }
 
 const fontClassNames: Record<TypographyFont, string> = {
@@ -54,6 +55,7 @@ export const Typography: FC<TypographyProps> = ({
   align = 'left',
   color = 'primary',
   font = 'primary',
+  uppercase = false,
   ...props
 }: TypographyProps) => {
   const classNames = clsx(
@@ -63,6 +65,7 @@ export const Typography: FC<TypographyProps> = ({
     styles[weight],
     styles[align],
     styles[color],
+    uppercase && styles.uppercase,
     className
   )
 

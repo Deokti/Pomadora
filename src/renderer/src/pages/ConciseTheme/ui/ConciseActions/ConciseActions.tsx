@@ -1,4 +1,6 @@
 import { Button, ButtonIcon, Icon } from 'shared/components'
+import { useNavigate } from 'react-router-dom'
+import { AppRoute } from 'shared/routes/AppRoute'
 
 import styles from './ConciseActions.module.css'
 import { ConciseActionsView } from '../../model/ConcisePresenter'
@@ -18,6 +20,8 @@ export const ConciseActions = ({
   onReset,
   onFinish
 }: ConciseActionsProps) => {
+  const navigate = useNavigate()
+
   return (
     <div className={styles.container}>
       <div className={styles.left}>
@@ -34,7 +38,12 @@ export const ConciseActions = ({
         </ButtonIcon>
       </div>
 
-      <Button startIcon={<Icon name="settings" size={22} />} size="small" variant="text">
+      <Button
+        startIcon={<Icon name="settings" size={22} />}
+        size="small"
+        variant="text"
+        onClick={() => navigate(AppRoute.SETTINGS)}
+      >
         Настройки
       </Button>
     </div>

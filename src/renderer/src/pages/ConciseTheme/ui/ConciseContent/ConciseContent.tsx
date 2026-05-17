@@ -19,7 +19,9 @@ export const ConciseContent = ({ view }: ConciseContentProps) => {
     <div className={styles.container}>
       <div className={styles.top}>
         <Indicator color={conciseIndicator[view.currentPhase]} pulse shadow />
-        <Typography variant="eyebrow">{view.statusText}</Typography>
+        <Typography variant="eyebrow" uppercase>
+          {view.statusText}
+        </Typography>
       </div>
 
       <div className={styles.time}>

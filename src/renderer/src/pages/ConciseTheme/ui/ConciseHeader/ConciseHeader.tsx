@@ -10,7 +10,7 @@ export const ConciseHeader = ({ view }: ConciseHeaderProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <Typography variant="eyebrow" color="subtle">
+        <Typography variant="eyebrow" color="subtle" uppercase>
           {view.totalDurationMin} мин · {view.totalStages} этапов
         </Typography>
 

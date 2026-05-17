@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.small {
+  padding: 18px 24px;
+}
+
+.medium {
+  padding: 22px 24px;
+}
