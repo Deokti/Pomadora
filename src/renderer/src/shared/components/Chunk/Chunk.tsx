@@ -1,8 +1,7 @@
-import clsx from 'clsx'
 import { type FC, type ReactNode } from 'react'
 
-import styles from './Chunk.module.css'
-import { Typography } from 'shared/components'
+import { Flex } from '../Flex'
+import { Typography } from '../Typography'
 
 export interface ChunkProps {
   title: string
@@ -18,17 +17,17 @@ export const Chunk: FC<ChunkProps> = ({
   className
 }: ChunkProps) => {
   return (
-    <div className={clsx(styles.container, className)}>
-      <div className={styles.flex}>
+    <Flex className={className} align="center" justify="space-between">
+      <Flex direction="column" gap={2}>
         <Typography color="primary" variant="label" weight="medium">
           {title}
         </Typography>
         <Typography color="muted" variant="eyebrow">
           {subtitle}
         </Typography>
-      </div>
+      </Flex>
 
       {supportComponent}
-    </div>
+    </Flex>
   )
 }

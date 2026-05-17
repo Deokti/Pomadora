@@ -1,4 +1,4 @@
-import { Slider, Typography } from 'shared/components'
+import { Flex, Slider, Typography } from 'shared/components'
 
 import type { ConciseSliderView } from '../../model/ConcisePresenter'
 import styles from './ConciseSlider.module.css'
@@ -12,14 +12,14 @@ export const ConciseSlider = ({ view }: ConciseSliderProps) => {
     <div className={styles.container}>
       <Slider className={styles.slider} value={view.progress} />
 
-      <div className={styles.time}>
+      <Flex className={styles.time} align="center" justify="space-between">
         <Typography color="muted" variant="label">
           {view.elapsedFormatted}
         </Typography>
         <Typography color="muted" variant="label">
           {view.durationFormatted}
         </Typography>
-      </div>
+      </Flex>
     </div>
   )
 }

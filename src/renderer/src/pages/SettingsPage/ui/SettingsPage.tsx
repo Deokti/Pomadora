@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { AppRoute } from 'shared/routes/AppRoute'
-import { Button, Chunk, Icon, Typography } from 'shared/components'
+import { Button, Chunk, Flex, Icon, Typography } from 'shared/components'
 
 import styles from './SettingsPage.module.css'
 
@@ -8,8 +8,8 @@ export const SettingsPage = () => {
   const navigate = useNavigate()
 
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
+    <Flex className={styles.container} direction="column">
+      <Flex className={styles.header} align="center" justify="space-between" gap={24}>
         <Typography variant="title" color="muted">
           Header
         </Typography>
@@ -22,7 +22,7 @@ export const SettingsPage = () => {
         >
           Назад
         </Button>
-      </div>
+      </Flex>
 
       <div className={styles.content}>
         <aside className={styles.sidebar}>Sidebar</aside>
@@ -35,6 +35,6 @@ export const SettingsPage = () => {
           />
         </section>
       </div>
-    </div>
+    </Flex>
   )
 }

@@ -1,7 +1,4 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  gap: var(--default-gap);
   width: 100%;
   min-height: 100%;
   padding: 36px 56px 32px;

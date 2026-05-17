@@ -1,7 +1,6 @@
-import { Indicator, IndicatorProps, Typography } from 'shared/components'
+import { Flex, Indicator, IndicatorProps, Typography } from 'shared/components'
 
 import type { ConciseContentView } from '../../model/ConcisePresenter'
-import styles from './ConciseContent.module.css'
 import { PomodoroPhase } from 'entities/pomodoro'
 
 type ConciseContentProps = {
@@ -16,15 +15,15 @@ const conciseIndicator: Record<PomodoroPhase, IndicatorProps['color']> = {
 
 export const ConciseContent = ({ view }: ConciseContentProps) => {
   return (
-    <div className={styles.container}>
-      <div className={styles.top}>
+    <Flex direction="column" gap="var(--default-gap)">
+      <Flex align="center" gap={10}>
         <Indicator color={conciseIndicator[view.currentPhase]} pulse shadow />
         <Typography variant="eyebrow" uppercase>
           {view.statusText}
         </Typography>
-      </div>
+      </Flex>
 
-      <div className={styles.time}>
+      <Flex align="center">
         <Typography variant="timerCompact" font="mono">
           {view.timerMinutes}
         </Typography>
@@ -34,7 +33,7 @@ export const ConciseContent = ({ view }: ConciseContentProps) => {
         <Typography variant="timerCompact" font="mono">
           {view.timerSeconds}
         </Typography>
-      </div>
-    </div>
+      </Flex>
+    </Flex>
   )
 }

@@ -5,12 +5,13 @@ import { ConciseSlider } from '../ConciseSlider/ConciseSlider'
 import styles from './Concise.module.css'
 import { observer } from 'mobx-react-lite'
 import { useConcisePresenter } from '../../model/hooks/useConcisePresenter'
+import { Flex } from 'shared/components'
 
 export const ConciseTheme = observer(() => {
   const presenter = useConcisePresenter()
 
   return (
-    <div className={styles.container}>
+    <Flex className={styles.container} direction="column" gap="var(--default-gap)">
       <ConciseHeader view={presenter.header} />
       <ConciseContent view={presenter.content} />
       <ConciseSlider view={presenter.slider} />
@@ -21,6 +22,6 @@ export const ConciseTheme = observer(() => {
         onReset={presenter.reset}
         onFinish={presenter.finish}
       />
-    </div>
+    </Flex>
   )
 })
