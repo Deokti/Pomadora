@@ -1,9 +1,7 @@
 .button {
-  align-items: center;
-  flex: 0 0 auto;
-  min-width: 0;
+  align-items: flex-start;
   border-radius: 14px;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   font-family: inherit;
   font-weight: bold;
   line-height: 1;
@@ -14,6 +12,14 @@
     box-shadow 160ms ease,
     color 160ms ease,
     filter 160ms ease;
+}
+
+.button :global(.MuiButton-startIcon),
+.button :global(.MuiButton-endIcon) {
+  color: currentColor;
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
 }
 
 .small {
@@ -48,14 +54,13 @@
 
 .secondary {
   background-color: var(--color-button-secondary-bg);
-  border: 2px solid var(--color-button-secondary-border);
+  border: 1px solid var(--color-button-secondary-border);
   color: var(--color-button-secondary-text);
 }
 
 .secondary:hover {
   background-color: color-mix(in srgb, var(--color-button-secondary-bg) 82%, #fff);
   border-color: color-mix(in srgb, var(--color-button-secondary-border) 74%, #fff);
-  box-shadow: 0 0 0 4px color-mix(in srgb, #fff 7%, transparent);
 }
 
 .secondary:active {
@@ -70,10 +75,48 @@
   line-height: var(--lh-label);
 }
 
+.text.small.pill-shift {
+  padding: 7px 10px 7px 6px;
+}
+
 .text:hover {
   background-color: transparent;
   color: var(--color-text-primary);
   box-shadow: none;
+}
+
+.text.pill-shift:hover {
+  background-color: var(--color-bg-control);
+  color: var(--color-text-primary);
+}
+
+.text.pill-shift :global(.MuiButton-startIcon) {
+  align-self: flex-start;
+}
+
+.text.pill-shift:hover :global(.MuiButton-startIcon) {
+  color: var(--color-accent-primary);
+  transform: translateX(-3px);
+}
+
+.text.pill-shift:hover :global(.MuiButton-endIcon) {
+  color: var(--color-accent-primary);
+  transform: translateX(3px);
+}
+
+.secondary.accent-icon:hover {
+  background-color: var(--color-bg-control);
+  border-color: color-mix(in srgb, var(--color-border-subtle) 60%, #fff 14%);
+}
+
+.secondary.accent-icon:hover :global(.MuiButton-startIcon),
+.secondary.accent-icon:hover :global(.MuiButton-endIcon) {
+  color: var(--color-accent-primary);
+}
+
+.secondary.accent-icon:hover :global(.MuiButton-startIcon svg),
+.secondary.accent-icon:hover :global(.MuiButton-endIcon svg) {
+  color: inherit;
 }
 
 .text:active {

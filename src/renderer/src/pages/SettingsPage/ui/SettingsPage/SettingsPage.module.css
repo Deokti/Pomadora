@@ -2,8 +2,13 @@
   min-height: 100%;
 }
 
+.title {
+  cursor: pointer;
+}
+
 .header {
   padding: 14px 18px 14px 14px;
+  background-color: var(--color-bg-app);
 }
 
 .content {
@@ -16,8 +21,10 @@
 .sidebar {
   border-right: 1px solid var(--color-border-primary);
   padding: 18px 12px;
+  background-color: var(--color-bg-app);
 }
 
 .section {
   padding: 28px 36px 36px;
+  background: var(--color-bg-card);
 }

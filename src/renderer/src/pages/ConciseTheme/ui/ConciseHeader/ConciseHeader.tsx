@@ -15,7 +15,8 @@ export const ConciseHeader = ({ view }: ConciseHeaderProps) => {
         </Typography>
 
         <Button
-          endIcon={<Icon name="exchange" size={12} color="var(--slate-500)" />}
+          endIcon={<Icon name="exchange" size={12} />}
+          hoverEffect="accent-icon"
           size="small"
           variant="secondary"
         >

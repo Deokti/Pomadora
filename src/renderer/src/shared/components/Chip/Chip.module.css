@@ -1,0 +1,8 @@
+.container {
+  border: 1px solid var(--color-border-subtle);
+  padding: 3px 6px;
+  border-radius: 6px;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  line-height: 1;
+}

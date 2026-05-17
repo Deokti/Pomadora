@@ -1,6 +1,7 @@
 import { RiResetRightLine } from 'react-icons/ri'
-import { FaArrowLeft, FaExchangeAlt, FaStop, FaPause, FaPlay } from 'react-icons/fa'
+import { FaExchangeAlt, FaStop, FaPause, FaPlay } from 'react-icons/fa'
 import { IoPlayForwardSharp } from 'react-icons/io5'
+import { MdKeyboardArrowLeft } from 'react-icons/md'
 
 import { CiSettings } from 'react-icons/ci'
 import { IconType, IconBaseProps } from 'react-icons'
@@ -13,7 +14,7 @@ export type IconName =
   | 'skip'
   | 'exchange'
   | 'stop'
-  | 'arrow-left'
+  | 'arrowLeft'
 
 const Icons: Record<IconName, IconType> = {
   start: FaPlay,
@@ -23,7 +24,7 @@ const Icons: Record<IconName, IconType> = {
   skip: IoPlayForwardSharp,
   exchange: FaExchangeAlt,
   stop: FaStop,
-  'arrow-left': FaArrowLeft
+  arrowLeft: MdKeyboardArrowLeft
 }
 
 export interface IconProps extends IconBaseProps {
