@@ -1,5 +1,6 @@
 /**
- * Функция преобразовывает микросекунды в строку, формата вида 25:00
+ * Форматирует длительность в секундах в строку таймера формата MM:SS.
+ * Например: 1500 -> "25:00", 65 -> "01:05".
  */
 export const formatDurationSec = (durationSec: number): string => {
   const minutes = Math.floor(durationSec / 60)

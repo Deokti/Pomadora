@@ -1,7 +1,12 @@
-import { PomodoroPhase, PomodoroTimerSettings } from 'entities/pomodoro'
+import { PomodoroPhase, PomodoroTimerSettings } from '../types'
 
 /**
- * Функция принимает параметры в виде текущих настроек и фазы и отдает время в секундах
+ * Возвращает длительность указанной фазы pomodoro-цикла в секундах.
+ *
+ * Длительность берётся из активных настроек таймера:
+ * focusDurationMin - для фокуса,
+ * shortBreakDurationMin - для короткого перерыва,
+ * longBreakDurationMin - для длинного перерыва.
  */
 export const getCurrentPhaseDurationSec = (
   settings: PomodoroTimerSettings,
