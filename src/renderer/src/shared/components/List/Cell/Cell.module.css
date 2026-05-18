@@ -1,0 +1,43 @@
+.container {
+  cursor: pointer;
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 10px;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.icon {
+  flex: 0 0 auto;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: color 160ms ease;
+}
+
+.text {
+  width: 100%;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: color 160ms ease;
+}
+
+.container:hover {
+  background-color: var(--color-bg-control);
+}
+
+.container:hover .text {
+  color: var(--color-text-primary);
+}
+
+.selected {
+  background-color: var(--color-bg-control);
+
+  .icon {
+    color: var(--color-accent-primary);
+  }
+
+  .text {
+    color: var(--color-text-primary);
+  }
+}

@@ -5,6 +5,7 @@ import { MdKeyboardArrowLeft } from 'react-icons/md'
 
 import { CiSettings } from 'react-icons/ci'
 import { IconType, IconBaseProps } from 'react-icons'
+import { WiTime9 } from 'react-icons/wi'
 
 export type IconName =
   | 'start'
@@ -15,6 +16,7 @@ export type IconName =
   | 'exchange'
   | 'stop'
   | 'arrowLeft'
+  | 'time'
 
 const Icons: Record<IconName, IconType> = {
   start: FaPlay,
@@ -24,7 +26,8 @@ const Icons: Record<IconName, IconType> = {
   skip: IoPlayForwardSharp,
   exchange: FaExchangeAlt,
   stop: FaStop,
-  arrowLeft: MdKeyboardArrowLeft
+  arrowLeft: MdKeyboardArrowLeft,
+  time: WiTime9
 }
 
 export interface IconProps extends IconBaseProps {
