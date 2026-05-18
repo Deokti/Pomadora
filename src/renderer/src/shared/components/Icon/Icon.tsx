@@ -1,11 +1,12 @@
 import { RiResetRightLine } from 'react-icons/ri'
-import { FaExchangeAlt, FaStop, FaPause, FaPlay } from 'react-icons/fa'
+import { FaExchangeAlt, FaStop, FaPause, FaPlay, FaRegKeyboard } from 'react-icons/fa'
 import { IoPlayForwardSharp } from 'react-icons/io5'
 import { MdKeyboardArrowLeft } from 'react-icons/md'
 
 import { CiSettings } from 'react-icons/ci'
 import { IconType, IconBaseProps } from 'react-icons'
 import { WiTime9 } from 'react-icons/wi'
+import { PiWarningCircle } from 'react-icons/pi'
 
 export type IconName =
   | 'start'
@@ -17,6 +18,8 @@ export type IconName =
   | 'stop'
   | 'arrowLeft'
   | 'time'
+  | 'keyboard'
+  | 'warningCircle'
 
 const Icons: Record<IconName, IconType> = {
   start: FaPlay,
@@ -27,7 +30,9 @@ const Icons: Record<IconName, IconType> = {
   exchange: FaExchangeAlt,
   stop: FaStop,
   arrowLeft: MdKeyboardArrowLeft,
-  time: WiTime9
+  time: WiTime9,
+  keyboard: FaRegKeyboard,
+  warningCircle: PiWarningCircle
 }
 
 export interface IconProps extends IconBaseProps {

@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AppRoute } from 'shared/routes/AppRoute'
-import { Button, Cell, Chip, Chunk, Flex, Icon, Typography } from 'shared/components'
+import { Button, Cell, Chip, Chunk, Flex, Icon, ListBasic, Typography } from 'shared/components'
 import { useKeyDown } from 'shared/hooks'
 
 import styles from './SettingsPage.module.css'
@@ -39,7 +39,11 @@ export const SettingsPage = () => {
 
       <div className={styles.content}>
         <aside className={styles.sidebar}>
-          <Cell label="Таймер" icon="time" selected />
+          <ListBasic gap="small">
+            <Cell label="Таймер" icon="time" selected />
+            <Cell label="Горячие клавиши" icon="keyboard" />
+            <Cell label="О программе" icon="warningCircle" />
+          </ListBasic>
         </aside>
 
         <section className={styles.section}>
