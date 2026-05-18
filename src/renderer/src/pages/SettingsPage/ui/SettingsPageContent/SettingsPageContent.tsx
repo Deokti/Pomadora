@@ -1,7 +1,10 @@
-import { Chunk, ListBasic, Slider, Switch } from 'shared/components'
+import { useState } from 'react'
+import { Chunk, ListBasic, Slider, Switch, NumberStepper } from 'shared/components'
 import { SettingsControlValue, SettingsSection } from '../components'
 
 export const SettingsPageContent = () => {
+  const [focusesBeforeLongBreak, setFocusesBeforeLongBreak] = useState(4)
+
   return (
     <SettingsSection
       title="Таймер"
@@ -33,6 +36,18 @@ export const SettingsPageContent = () => {
             <SettingsControlValue value="15 мин">
               <Slider variant="control" value={15} />
             </SettingsControlValue>
+          }
+        />
+        <Chunk
+          title="Фокусов до длинного перерыва"
+          subtitle="Классическая схема — 4 фокуса"
+          supportComponent={
+            <NumberStepper
+              value={focusesBeforeLongBreak}
+              min={1}
+              max={8}
+              onChange={setFocusesBeforeLongBreak}
+            />
           }
         />
         <Chunk
