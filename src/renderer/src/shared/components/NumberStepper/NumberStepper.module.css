@@ -1,0 +1,73 @@
+.container {
+  display: grid;
+  grid-template-columns: 36px 44px 36px;
+  width: 116px;
+  height: 38px;
+  overflow: hidden;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 9px;
+  background-color: transparent;
+  -webkit-app-region: no-drag;
+}
+
+.button,
+.input {
+  min-width: 0;
+  border: 0;
+  background-color: transparent;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-primary);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  line-height: var(--lh-label);
+}
+
+.button {
+  cursor: pointer;
+  border-right: 1px solid var(--color-border-subtle);
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.button:last-child {
+  border-right: 0;
+  border-left: 1px solid var(--color-border-subtle);
+}
+
+.button:hover:not(:disabled) {
+  background-color: var(--color-bg-control);
+  color: var(--color-accent-primary);
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.button:disabled {
+  cursor: default;
+  color: var(--color-text-subtle);
+}
+
+.input {
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  outline: none;
+  cursor: text;
+  -moz-appearance: textfield;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+.input:focus {
+  background-color: color-mix(in srgb, var(--color-bg-control) 58%, transparent);
+}
+
+.disabled {
+  opacity: 0.56;
+}

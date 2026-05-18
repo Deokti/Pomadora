@@ -3,9 +3,18 @@ import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/logo.ico?asset'
 
+ipcMain.handle('window:minimize', (event) => {
+  BrowserWindow.fromWebContents(event.sender)?.minimize()
+})
+
+ipcMain.handle('window:close', (event) => {
+  BrowserWindow.fromWebContents(event.sender)?.close()
+})
+
 function createWindow(): void {
-  const windowWidth = 800
-  const windowHeight = 510
+  // const windowWidth = 800
+  const windowWidth = 960
+  const windowHeight = 550
 
   // Create the browser window.
   const mainWindow = new BrowserWindow({

@@ -62,13 +62,15 @@
   font-size: var(--fs-label-wide);
   line-height: var(--lh-label-wide);
   letter-spacing: var(--ls-label-wide);
-  text-transform: uppercase;
 }
 
 .eyebrow {
   font-size: var(--fs-eyebrow);
   line-height: var(--lh-eyebrow);
   letter-spacing: var(--ls-eyebrow);
+}
+
+.uppercase {
   text-transform: uppercase;
 }
 

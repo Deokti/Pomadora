@@ -1,11 +1,14 @@
 import './App.css'
-import { TimerPage } from 'pages/TimerPage'
 import { FC } from 'react'
+import { HashRouter } from 'react-router-dom'
+import { AppRouter } from 'app/router'
 
 export const App: FC = () => {
   return (
     <div className="app">
-      <TimerPage />
+      <HashRouter>
+        <AppRouter />
+      </HashRouter>
     </div>
   )
 }

@@ -4,14 +4,22 @@ import { type FC } from 'react'
 
 import styles from './Slider.module.css'
 
+export type SliderVariant = 'progress' | 'control'
+
 export interface SliderProps extends Omit<MuiSliderProps, 'className' | 'color' | 'size'> {
   className?: string
+  variant?: SliderVariant
 }
 
-export const Slider: FC<SliderProps> = ({ className, step = 0.1, ...props }: SliderProps) => {
+export const Slider: FC<SliderProps> = ({
+  className,
+  step = 0.1,
+  variant = 'progress',
+  ...props
+}: SliderProps) => {
   return (
     <MuiSlider
-      className={clsx(styles.container, className)}
+      className={clsx(styles.container, styles[variant], className)}
       classes={{
         rail: styles.rail,
         track: styles.track,
