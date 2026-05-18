@@ -1,7 +1,17 @@
 import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AppRoute } from 'shared/routes/AppRoute'
-import { Button, Cell, Chip, Chunk, Flex, Icon, ListBasic, Typography } from 'shared/components'
+import {
+  Button,
+  Cell,
+  Chip,
+  Chunk,
+  Flex,
+  Icon,
+  ListBasic,
+  Slider,
+  Typography
+} from 'shared/components'
 import { useKeyDown } from 'shared/hooks'
 
 import styles from './SettingsPage.module.css'
@@ -50,7 +60,7 @@ export const SettingsPage = () => {
           <Chunk
             title="Длительность фокуса"
             subtitle="Стандарт помодоро — 25 минут"
-            supportComponent={<Icon name="settings" color="#FFF" size={25} />}
+            supportComponent={<Slider variant="control" className={styles.slider} />}
           />
         </section>
       </div>

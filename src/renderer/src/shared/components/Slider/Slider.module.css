@@ -22,7 +22,27 @@
   background-color: var(--color-slider-primary-fill);
 }
 
-.thumb {
+.progress .thumb {
   display: none;
 }
 
+.control {
+  --slider-track-height: 4px;
+  padding: 8px 0;
+}
+
+.control .thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  background-color: var(--color-slider-primary-thumb);
+  box-shadow:
+    0 0 0 4px var(--color-slider-primary-thumb-ring),
+    0 0 14px var(--color-slider-primary-thumb-glow);
+}
+
+.control .thumb:hover,
+.control .thumb:global(.Mui-focusVisible) {
+  box-shadow:
+    0 0 0 4px var(--color-slider-primary-thumb-ring),
+    0 0 18px var(--color-slider-primary-thumb-glow);
+}

@@ -28,3 +28,7 @@
   padding: 28px 36px 36px;
   background: var(--color-bg-card);
 }
+
+.slider {
+  max-width: 260px;
+}
