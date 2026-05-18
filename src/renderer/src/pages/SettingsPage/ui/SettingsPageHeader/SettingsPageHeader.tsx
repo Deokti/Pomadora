@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AppRoute } from 'shared/routes/AppRoute'
-import { Button, Chip, Flex, Icon, Typography } from 'shared/components'
+import { Button, Flex, Icon, Typography } from 'shared/components'
 import { useKeyDown } from 'shared/hooks'
 
 import styles from './SettingsPageHeader.module.css'
@@ -28,13 +28,6 @@ export const SettingsPageHeader = () => {
             Настройки
           </Typography>
         </Button>
-
-        <Flex align="center" gap={8}>
-          <Typography color="muted" uppercase variant="eyebrow" weight="medium">
-            Выход
-          </Typography>
-          <Chip label="Esc" />
-        </Flex>
       </Flex>
     </Flex>
   )

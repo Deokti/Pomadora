@@ -1,4 +1,4 @@
-import { Chunk, ListBasic, Slider } from 'shared/components'
+import { Chunk, ListBasic, Slider, Switch } from 'shared/components'
 import { SettingsControlValue, SettingsSection } from '../components'
 
 export const SettingsPageContent = () => {
@@ -34,6 +34,16 @@ export const SettingsPageContent = () => {
               <Slider variant="control" value={15} />
             </SettingsControlValue>
           }
+        />
+        <Chunk
+          title="Автостарт перерывов"
+          subtitle="Сразу после окончания фокуса"
+          supportComponent={<Switch />}
+        />
+        <Chunk
+          title="Автостарт следующего фокуса"
+          subtitle="Без ожидания клика после перерыва"
+          supportComponent={<Switch />}
         />
       </ListBasic>
     </SettingsSection>
