@@ -1,7 +1,5 @@
 import { Chunk, ListBasic, Slider } from 'shared/components'
-import { SettingsSection } from '../components'
-
-import styles from './SettingsPageContent.module.css'
+import { SettingsControlValue, SettingsSection } from '../components'
 
 export const SettingsPageContent = () => {
   return (
@@ -13,17 +11,29 @@ export const SettingsPageContent = () => {
         <Chunk
           title="Длительность фокуса"
           subtitle="Стандарт помодоро — 25 минут"
-          supportComponent={<Slider variant="control" className={styles.slider} />}
+          supportComponent={
+            <SettingsControlValue value="25 мин">
+              <Slider variant="control" value={25} />
+            </SettingsControlValue>
+          }
         />
         <Chunk
           title="Короткий перерыв"
           subtitle="Между обычными сессиями"
-          supportComponent={<Slider variant="control" className={styles.slider} />}
+          supportComponent={
+            <SettingsControlValue value="5 мин">
+              <Slider variant="control" value={5} />
+            </SettingsControlValue>
+          }
         />
         <Chunk
           title="Длинный перерыв"
           subtitle="После цикла фокусов"
-          supportComponent={<Slider variant="control" className={styles.slider} />}
+          supportComponent={
+            <SettingsControlValue value="15 мин">
+              <Slider variant="control" value={15} />
+            </SettingsControlValue>
+          }
         />
       </ListBasic>
     </SettingsSection>
