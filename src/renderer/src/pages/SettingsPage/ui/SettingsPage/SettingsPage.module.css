@@ -15,7 +15,6 @@
   display: grid;
   grid-template-columns: 260px 1fr;
   min-height: 100vh;
-  border-top: 1px solid var(--color-border-primary);
 }
 
 .sidebar {
